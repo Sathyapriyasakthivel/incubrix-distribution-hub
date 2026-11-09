@@ -1,0 +1,153 @@
+{
+  "index": 8,
+  "id": "case_08_valid_webhook_partner",
+  "case_description": "Valid high-throughput webhook dispatch with HMAC signing",
+  "expected_outcome": {
+    "status": "succeeded"
+  },
+  "actual_status": "succeeded",
+  "actual_error_code": null,
+  "expectation_matched": true,
+  "duration_ms": 414,
+  "live_url": "http://127.0.0.1:55008/mock/webhook/events/wh_19234",
+  "platform_post_id": "wh_19234",
+  "response_data": {
+    "job_id": "job_e25aa4d8-d047-487b-a75e-23a78b63df8d",
+    "destination_id": "dest_cert_webhook",
+    "destination_name": "Certified Webhook Syndicate Receiver",
+    "connector_key": "webhook",
+    "idempotency_key": "batch_run_1793452290784_008",
+    "status": "succeeded",
+    "progress": 100,
+    "run_at": null,
+    "title": "Automated Content Syndication Event",
+    "platform_post_id": "wh_19234",
+    "live_url": "http://127.0.0.1:55008/mock/webhook/events/wh_19234",
+    "rule_decision": null,
+    "rule_violations": [],
+    "manifest": {
+      "version": "1.0.0",
+      "generator": "IncuBrix Long-Tail Distribution Network Engine",
+      "timestamp": "2026-10-31T13:11:30.798Z",
+      "connector": {
+        "key": "webhook",
+        "execution_time_ms": 6
+      },
+      "models_and_providers": {
+        "provider": "mock",
+        "model": "deterministic-heuristic",
+        "version": "1.0.0",
+        "is_commercial_licensed": true
+      },
+      "content_classification": {
+        "is_ai_generated": false,
+        "marked_as_ai": false,
+        "disclosure_added": false,
+        "disclosure_text": null,
+        "generation_method": "human_authored"
+      },
+      "seed": {
+        "value": null,
+        "reason": "Deterministic heuristic execution, non-stochastic model"
+      },
+      "settings": {
+        "environment": "development",
+        "simulation": true,
+        "destination_id": "dest_cert_webhook",
+        "platform_key": "webhook"
+      },
+      "timings": {
+        "started_at": "2026-10-31T13:11:30.791Z",
+        "completed_at": "2026-10-31T13:11:30.797Z",
+        "duration_ms": 6
+      },
+      "cost_estimate": {
+        "unit": "per_publication",
+        "cost_usd": 0,
+        "cost_per_1000_usd": 0,
+        "currency": "USD"
+      },
+      "warnings": [],
+      "licensing": {
+        "declared_licenses": [
+          "---------",
+          "----------------------",
+          "MIT",
+          "Node.js (MIT-style)",
+          "Apache-2.0",
+          "ISC",
+          "BSD-2-Clause",
+          "Tool",
+          "------"
+        ],
+        "commercial_use_allowed": true,
+        "agpl_free": true,
+        "source_reference": "SOURCES.md"
+      }
+    },
+    "output_manifest": {
+      "version": "1.0.0",
+      "generator": "IncuBrix Long-Tail Distribution Network Engine",
+      "timestamp": "2026-10-31T13:11:30.798Z",
+      "connector": {
+        "key": "webhook",
+        "execution_time_ms": 6
+      },
+      "models_and_providers": {
+        "provider": "mock",
+        "model": "deterministic-heuristic",
+        "version": "1.0.0",
+        "is_commercial_licensed": true
+      },
+      "content_classification": {
+        "is_ai_generated": false,
+        "marked_as_ai": false,
+        "disclosure_added": false,
+        "disclosure_text": null,
+        "generation_method": "human_authored"
+      },
+      "seed": {
+        "value": null,
+        "reason": "Deterministic heuristic execution, non-stochastic model"
+      },
+      "settings": {
+        "environment": "development",
+        "simulation": true,
+        "destination_id": "dest_cert_webhook",
+        "platform_key": "webhook"
+      },
+      "timings": {
+        "started_at": "2026-10-31T13:11:30.791Z",
+        "completed_at": "2026-10-31T13:11:30.797Z",
+        "duration_ms": 6
+      },
+      "cost_estimate": {
+        "unit": "per_publication",
+        "cost_usd": 0,
+        "cost_per_1000_usd": 0,
+        "currency": "USD"
+      },
+      "warnings": [],
+      "licensing": {
+        "declared_licenses": [
+          "---------",
+          "----------------------",
+          "MIT",
+          "Node.js (MIT-style)",
+          "Apache-2.0",
+          "ISC",
+          "BSD-2-Clause",
+          "Tool",
+          "------"
+        ],
+        "commercial_use_allowed": true,
+        "agpl_free": true,
+        "source_reference": "SOURCES.md"
+      }
+    },
+    "tailoring_warnings": [],
+    "error": null,
+    "created_at": "2026-10-31T13:11:30.789Z",
+    "updated_at": "2026-10-31T13:11:30.798Z"
+  }
+}

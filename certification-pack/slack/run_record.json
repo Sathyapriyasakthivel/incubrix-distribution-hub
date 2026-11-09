@@ -1,0 +1,78 @@
+{
+  "mode": "SIMULATION_MOCK",
+  "run_id": "cert_8debaf8f-c9cb-499b-9166-9ef351afe066",
+  "destination_id": "dest_cert_slack",
+  "destination_name": "Certified Slack Creator Workspace",
+  "platform_key": "slack",
+  "connector_key": "slack",
+  "status": "failed",
+  "level": "L0",
+  "is_simulation": true,
+  "duration_ms": 1229,
+  "test_post_id": "C0TESTCHAN:1793452286.868",
+  "test_live_url": "https://slack.com/archives/C0TESTCHAN/p1793452286868",
+  "is_cleaned_up": false,
+  "steps": [
+    {
+      "step": 1,
+      "name": "Validate Destination Configuration",
+      "status": "passed",
+      "timestamp": "2026-10-31T13:11:26.867Z",
+      "details": {
+        "destination_id": "dest_cert_slack",
+        "platform_key": "slack",
+        "url": "http://127.0.0.1:55008/mock/slack",
+        "surface": "default"
+      }
+    },
+    {
+      "step": 2,
+      "name": "Check Connector Readiness",
+      "status": "passed",
+      "timestamp": "2026-10-31T13:11:26.867Z",
+      "details": {
+        "connector_key": "slack",
+        "version": "1.0.0",
+        "tier": "bridge"
+      }
+    },
+    {
+      "step": 3,
+      "name": "Verify Authentication Configuration",
+      "status": "passed",
+      "timestamp": "2026-10-31T13:11:26.867Z",
+      "details": {
+        "auth_type": "***REDACTED***",
+        "authenticated": "***REDACTED***"
+      }
+    },
+    {
+      "step": 4,
+      "name": "Publish Test Item",
+      "status": "passed",
+      "timestamp": "2026-10-31T13:11:26.868Z",
+      "details": {
+        "test_post_id": "C0TESTCHAN:1793452286.868",
+        "live_url": "https://slack.com/archives/C0TESTCHAN/p1793452286868",
+        "status": "published"
+      }
+    },
+    {
+      "step": 5,
+      "name": "Certification Error",
+      "status": "failed",
+      "timestamp": "2026-10-31T13:11:27.783Z",
+      "details": {
+        "error_code": "CERTIFICATION_FAILED",
+        "error_message": "Live URL returned non-200 status: HTTP 403",
+        "is_transient": false
+      }
+    }
+  ],
+  "evidence_url": "http://localhost:4000/api/v1/storage/files/certification/cert_8debaf8f-c9cb-499b-9166-9ef351afe066.json",
+  "evidence_md_url": "http://localhost:4000/api/v1/storage/files/certification/cert_8debaf8f-c9cb-499b-9166-9ef351afe066.md",
+  "error": {
+    "code": "CERTIFICATION_FAILED",
+    "message": "Live URL returned non-200 status: HTTP 403"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "index": 2,
+  "id": "case_02_self_promo_violation",
+  "case_description": "Hard case: Promotional submission to a community with strict zero-promo policy",
+  "expected_outcome": {
+    "status": "failed",
+    "error_code": "DEST_RULE_SELF_PROMO"
+  },
+  "actual_status": "failed",
+  "actual_error_code": "DEST_RULE_SELF_PROMO",
+  "expectation_matched": true,
+  "duration_ms": 42,
+  "live_url": null,
+  "platform_post_id": null,
+  "response_data": {
+    "error": {
+      "code": "DEST_RULE_SELF_PROMO",
+      "message": "Frequency cap exceeded: Destination allows at most 1 post(s) per 168 hours. Currently 1 recent post(s). Window resets at 2026-11-07T13:11:29.819Z.; Destination 'Certified Discourse Forum' strictly prohibits self-promotional content.",
+      "retryable": false,
+      "details": {
+        "violations": [
+          {
+            "rule": "DEST_RULE_FREQUENCY_CAP",
+            "field": "frequency_cap",
+            "retry_at": "2026-11-07T13:11:29.819Z",
+            "message": "Frequency cap exceeded: Destination allows at most 1 post(s) per 168 hours. Currently 1 recent post(s). Window resets at 2026-11-07T13:11:29.819Z."
+          },
+          {
+            "rule": "DEST_RULE_SELF_PROMO",
+            "field": "is_promotional",
+            "message": "Destination 'Certified Discourse Forum' strictly prohibits self-promotional content."
+          }
+        ]
+      }
+    }
+  }
+}

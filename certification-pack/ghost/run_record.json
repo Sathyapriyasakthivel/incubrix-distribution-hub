@@ -1,0 +1,122 @@
+{
+  "mode": "SIMULATION_MOCK",
+  "run_id": "cert_cb6773b9-aeb4-4a45-97d6-e1ed6a10473f",
+  "destination_id": "dest_cert_ghost",
+  "destination_name": "Certified Ghost Publication",
+  "platform_key": "ghost",
+  "connector_key": "ghost",
+  "status": "certified",
+  "level": "L4",
+  "is_simulation": true,
+  "duration_ms": 503,
+  "test_post_id": "ghost_64834",
+  "test_live_url": "http://127.0.0.1:55008/mock/ghost/post/ghost_64834",
+  "is_cleaned_up": true,
+  "steps": [
+    {
+      "step": 1,
+      "name": "Validate Destination Configuration",
+      "status": "passed",
+      "timestamp": "2026-10-31T13:11:24.037Z",
+      "details": {
+        "destination_id": "dest_cert_ghost",
+        "platform_key": "ghost",
+        "url": "http://127.0.0.1:55008/mock/ghost",
+        "surface": "default"
+      }
+    },
+    {
+      "step": 2,
+      "name": "Check Connector Readiness",
+      "status": "passed",
+      "timestamp": "2026-10-31T13:11:24.037Z",
+      "details": {
+        "connector_key": "ghost",
+        "version": "1.0.0",
+        "tier": "native"
+      }
+    },
+    {
+      "step": 3,
+      "name": "Verify Authentication Configuration",
+      "status": "passed",
+      "timestamp": "2026-10-31T13:11:24.037Z",
+      "details": {
+        "auth_type": "***REDACTED***",
+        "authenticated": "***REDACTED***"
+      }
+    },
+    {
+      "step": 4,
+      "name": "Publish Test Item",
+      "status": "passed",
+      "timestamp": "2026-10-31T13:11:24.043Z",
+      "details": {
+        "test_post_id": "ghost_64834",
+        "live_url": "http://127.0.0.1:55008/mock/ghost/post/ghost_64834",
+        "status": "published"
+      }
+    },
+    {
+      "step": 5,
+      "name": "Confirm Live Status & Content Retrievability",
+      "status": "passed",
+      "timestamp": "2026-10-31T13:11:24.047Z",
+      "details": {
+        "live_url": "http://127.0.0.1:55008/mock/ghost/post/ghost_64834",
+        "confirmed_title": "[CERTIFICATION-TEST] IncuBrix Test Run 10473f"
+      }
+    },
+    {
+      "step": 6,
+      "name": "Retrieve Publication Status",
+      "status": "passed",
+      "timestamp": "2026-10-31T13:11:24.051Z",
+      "details": {
+        "retrieved_status": "published",
+        "live_url": "http://127.0.0.1:55008/mock/ghost/post/ghost_64834"
+      }
+    },
+    {
+      "step": 7,
+      "name": "Delete Test Item",
+      "status": "passed",
+      "timestamp": "2026-10-31T13:11:24.056Z",
+      "details": {
+        "deleted": true
+      }
+    },
+    {
+      "step": 8,
+      "name": "Confirm Gone (Cleanup Verification)",
+      "status": "passed",
+      "timestamp": "2026-10-31T13:11:24.058Z",
+      "details": {
+        "post_status_after_delete": "not_found"
+      }
+    },
+    {
+      "step": 9,
+      "name": "Store Evidence Pack",
+      "status": "passed",
+      "timestamp": "2026-10-31T13:11:24.540Z",
+      "details": {
+        "evidence_json_url": "http://localhost:4000/api/v1/storage/files/certification/cert_cb6773b9-aeb4-4a45-97d6-e1ed6a10473f.json",
+        "evidence_md_url": "http://localhost:4000/api/v1/storage/files/certification/cert_cb6773b9-aeb4-4a45-97d6-e1ed6a10473f.md"
+      }
+    },
+    {
+      "step": 10,
+      "name": "Produce Final Certification Report",
+      "status": "passed",
+      "timestamp": "2026-10-31T13:11:24.540Z",
+      "details": {
+        "final_verdict": "CERTIFIED",
+        "assigned_level": "L4"
+      }
+    }
+  ],
+  "evidence_url": "http://localhost:4000/api/v1/storage/files/certification/cert_cb6773b9-aeb4-4a45-97d6-e1ed6a10473f.json",
+  "evidence_md_url": "http://localhost:4000/api/v1/storage/files/certification/cert_cb6773b9-aeb4-4a45-97d6-e1ed6a10473f.md",
+  "error": null
+}

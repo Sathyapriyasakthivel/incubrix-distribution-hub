@@ -1,0 +1,153 @@
+{
+  "index": 1,
+  "id": "case_01_valid_discourse",
+  "case_description": "Valid publication to certified Discourse forum",
+  "expected_outcome": {
+    "status": "succeeded"
+  },
+  "actual_status": "succeeded",
+  "actual_error_code": null,
+  "expectation_matched": true,
+  "duration_ms": 429,
+  "live_url": "http://127.0.0.1:55008/mock/discourse/t/test-topic/disc_94830",
+  "platform_post_id": "disc_94830",
+  "response_data": {
+    "job_id": "job_62288962-3dde-4da9-aecd-c1491504daea",
+    "destination_id": "dest_cert_discourse",
+    "destination_name": "Certified Discourse Forum",
+    "connector_key": "discourse",
+    "idempotency_key": "batch_run_1793452289810_001",
+    "status": "succeeded",
+    "progress": 100,
+    "run_at": null,
+    "title": "Scaling Distributed Video Pipelines across Long-Tail Communities",
+    "platform_post_id": "disc_94830",
+    "live_url": "http://127.0.0.1:55008/mock/discourse/t/test-topic/disc_94830",
+    "rule_decision": null,
+    "rule_violations": [],
+    "manifest": {
+      "version": "1.0.0",
+      "generator": "IncuBrix Long-Tail Distribution Network Engine",
+      "timestamp": "2026-10-31T13:11:29.831Z",
+      "connector": {
+        "key": "discourse",
+        "execution_time_ms": 5
+      },
+      "models_and_providers": {
+        "provider": "mock",
+        "model": "deterministic-heuristic",
+        "version": "1.0.0",
+        "is_commercial_licensed": true
+      },
+      "content_classification": {
+        "is_ai_generated": false,
+        "marked_as_ai": false,
+        "disclosure_added": false,
+        "disclosure_text": null,
+        "generation_method": "human_authored"
+      },
+      "seed": {
+        "value": null,
+        "reason": "Deterministic heuristic execution, non-stochastic model"
+      },
+      "settings": {
+        "environment": "development",
+        "simulation": true,
+        "destination_id": "dest_cert_discourse",
+        "platform_key": "discourse"
+      },
+      "timings": {
+        "started_at": "2026-10-31T13:11:29.822Z",
+        "completed_at": "2026-10-31T13:11:29.827Z",
+        "duration_ms": 5
+      },
+      "cost_estimate": {
+        "unit": "per_publication",
+        "cost_usd": 0,
+        "cost_per_1000_usd": 0,
+        "currency": "USD"
+      },
+      "warnings": [],
+      "licensing": {
+        "declared_licenses": [
+          "---------",
+          "----------------------",
+          "MIT",
+          "Node.js (MIT-style)",
+          "Apache-2.0",
+          "ISC",
+          "BSD-2-Clause",
+          "Tool",
+          "------"
+        ],
+        "commercial_use_allowed": true,
+        "agpl_free": true,
+        "source_reference": "SOURCES.md"
+      }
+    },
+    "output_manifest": {
+      "version": "1.0.0",
+      "generator": "IncuBrix Long-Tail Distribution Network Engine",
+      "timestamp": "2026-10-31T13:11:29.831Z",
+      "connector": {
+        "key": "discourse",
+        "execution_time_ms": 5
+      },
+      "models_and_providers": {
+        "provider": "mock",
+        "model": "deterministic-heuristic",
+        "version": "1.0.0",
+        "is_commercial_licensed": true
+      },
+      "content_classification": {
+        "is_ai_generated": false,
+        "marked_as_ai": false,
+        "disclosure_added": false,
+        "disclosure_text": null,
+        "generation_method": "human_authored"
+      },
+      "seed": {
+        "value": null,
+        "reason": "Deterministic heuristic execution, non-stochastic model"
+      },
+      "settings": {
+        "environment": "development",
+        "simulation": true,
+        "destination_id": "dest_cert_discourse",
+        "platform_key": "discourse"
+      },
+      "timings": {
+        "started_at": "2026-10-31T13:11:29.822Z",
+        "completed_at": "2026-10-31T13:11:29.827Z",
+        "duration_ms": 5
+      },
+      "cost_estimate": {
+        "unit": "per_publication",
+        "cost_usd": 0,
+        "cost_per_1000_usd": 0,
+        "currency": "USD"
+      },
+      "warnings": [],
+      "licensing": {
+        "declared_licenses": [
+          "---------",
+          "----------------------",
+          "MIT",
+          "Node.js (MIT-style)",
+          "Apache-2.0",
+          "ISC",
+          "BSD-2-Clause",
+          "Tool",
+          "------"
+        ],
+        "commercial_use_allowed": true,
+        "agpl_free": true,
+        "source_reference": "SOURCES.md"
+      }
+    },
+    "tailoring_warnings": [],
+    "error": null,
+    "created_at": "2026-10-31T13:11:29.819Z",
+    "updated_at": "2026-10-31T13:11:29.832Z"
+  }
+}

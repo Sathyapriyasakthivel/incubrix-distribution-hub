@@ -1,0 +1,114 @@
+services:
+  incubrix-distribution:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: incubrix-distribution-service
+    restart: unless-stopped
+    ports:
+      - "${PORT:-4000}:4000"
+    environment:
+      - NODE_ENV=production
+      - PORT=4000
+      - HOST=0.0.0.0
+      - APP_URL=${APP_URL:-http://localhost:4000}
+      - DB_PATH=/app/data/incubrix.db
+      - STORAGE_BACKEND=${STORAGE_BACKEND:-local}
+      - STORAGE_DIR=/app/storage
+      - S3_BUCKET=${S3_BUCKET:-incubrix-artifacts}
+      - S3_PUBLIC_BASE_URL=${S3_PUBLIC_BASE_URL:-http://localhost:9000/incubrix-artifacts}
+      - GHOST_LOCAL_URL=http://ghost:2368
+      - GHOST_ADMIN_KEY=${GHOST_ADMIN_KEY:-}
+      - LEMMY_LOCAL_URL=http://lemmy:8536
+      - LEMMY_JWT_TOKEN=${LEMMY_JWT_TOKEN:-}
+      - SIMULATION_DEFAULT=false
+      - MOCK_DISCOURSE_URL=http://localhost:4000/mock/discourse
+      - MOCK_LEMMY_URL=http://localhost:4000/mock/lemmy
+      - MOCK_DEVTO_URL=http://localhost:4000/mock/devto
+      - MOCK_GHOST_URL=http://localhost:4000/mock/ghost
+      - MOCK_WEBHOOK_RECEIVER_URL=http://localhost:4000/mock/webhook
+      - WEBHOOK_SHARED_SECRET=${WEBHOOK_SHARED_SECRET:-incubrix_webhook_dev_secret_xyz123}
+      - CALLBACK_SIGNING_SECRET=${CALLBACK_SIGNING_SECRET:-incubrix_callback_secret_abc789}
+      - API_ACCESS_TOKEN=${API_ACCESS_TOKEN:-}
+    volumes:
+      - ./data:/app/data
+      - ./storage:/app/storage
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    depends_on:
+      ghost:
+        condition: service_healthy
+      lemmy:
+        condition: service_started
+    healthcheck:
+      test: [ "CMD-SHELL", "wget -qO- http://localhost:4000/health || exit 1" ]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
+
+  ghost:
+    image: ghost:5-alpine
+    container_name: incubrix-ghost-local
+    restart: unless-stopped
+    ports:
+      - "2368:2368"
+    environment:
+      - NODE_ENV=production
+      - database__client=sqlite3
+      - database__connection__filename=/var/lib/ghost/content/data/ghost.db
+      - url=${GHOST_URL:-http://localhost:2368}
+    volumes:
+      - ghost_data:/var/lib/ghost/content
+    healthcheck:
+      test: [ "CMD-SHELL", "wget -qO- http://localhost:2368/ghost/api/admin/site/ || wget -qO- http://localhost:2368 || exit 1" ]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+  lemmy:
+    image: dessalines/lemmy:0.19.8
+    container_name: incubrix-lemmy-local
+    restart: unless-stopped
+    ports:
+      - "8536:8536"
+    volumes:
+      - ./config/lemmy.hjson:/config/config.hjson:ro
+    depends_on:
+      postgres:
+        condition: service_healthy
+      pictrs:
+        condition: service_started
+
+  postgres:
+    image: postgres:15-alpine
+    container_name: incubrix-lemmy-postgres
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER:-lemmy}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB:-lemmy}
+    volumes:
+      - lemmy_pg_data:/var/lib/postgresql/data
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-lemmy}" ]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  pictrs:
+    image: asonix/pictrs:0.5
+    container_name: incubrix-lemmy-pictrs
+    restart: unless-stopped
+    environment:
+      - PICTRS__SERVER__API_KEY=${PICTRS_API_KEY:-local-dev-pictrs-key}
+      - PICTRS__STORE__TYPE=filesystem
+      - PICTRS__STORE__PATH=/mnt/pict-rs
+    volumes:
+      - pictrs_data:/mnt/pict-rs
+
+volumes:
+  ghost_data:
+  lemmy_pg_data:
+  pictrs_data:

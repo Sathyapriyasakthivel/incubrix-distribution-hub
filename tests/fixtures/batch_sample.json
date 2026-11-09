@@ -1,0 +1,29 @@
+[
+  {
+    "destination_id": "discourse",
+    "title": "Scaling Long-Tail Video Publishing with Deterministic Connectors",
+    "body": "In this guide we explore how omnichannel publishers distribute rich multimedia across smaller developer blogs, forums, and partner sites using a unified connector contract.",
+    "canonical_url": "https://incubrix.internal/articles/long-tail-video",
+    "is_ai_generated": false,
+    "is_promotional": false,
+    "simulation": true
+  },
+  {
+    "destination_id": "devto",
+    "title": "Discussion: Best Practices for AI Agent Distribution Networks",
+    "body": "When dispatching updates to federated Lemmy and Discourse communities, rate limiting and exponential backoff are critical to maintain domain reputation.",
+    "canonical_url": "https://incubrix.internal/articles/agent-distribution",
+    "is_ai_generated": true,
+    "is_promotional": false,
+    "simulation": true
+  },
+  {
+    "destination_id": "webhook",
+    "title": "Automating Webhook Signatures with HMAC-SHA256 and Replay Protection",
+    "body": "Security standard for partner webhook publishing requires timestamp validation, nonces, and cryptographic signing with a shared secret to prevent tampering.",
+    "canonical_url": "https://incubrix.internal/articles/hmac-webhook-security",
+    "is_ai_generated": false,
+    "is_promotional": false,
+    "simulation": true
+  }
+]

@@ -1,0 +1,25 @@
+key: assisted
+name: Assisted Publishing Pack Generator
+version: 1.0.0
+tier: assisted
+auth: none
+surfaces:
+  - key: manual_pack
+    content_types: [text, image, video_link]
+    spec:
+      title_max_chars: 1000
+      body_max_chars: 100000
+      links_allowed: true
+rate_limits:
+  per_connection:
+    requests: 200
+    per_seconds: 60
+capabilities: [publish, status, delete, build_assist_pack]
+error_map:
+  "429": PLATFORM_RATE_LIMIT
+  "401": CONNECTION_AUTH_EXPIRED
+  "403": CONNECTION_AUTH_EXPIRED
+  "422": DEST_SPEC_VIOLATION
+  "4xx": DEST_SPEC_VIOLATION
+  "5xx": PLATFORM_UNAVAILABLE
+instance_param: none

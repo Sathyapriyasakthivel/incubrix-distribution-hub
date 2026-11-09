@@ -1,0 +1,122 @@
+{
+  "mode": "SIMULATION_MOCK",
+  "run_id": "cert_6d28fdcc-8fee-43fd-a1cd-990d4e060aa0",
+  "destination_id": "dest_cert_discourse",
+  "destination_name": "Certified Discourse Forum",
+  "platform_key": "discourse",
+  "connector_key": "discourse",
+  "status": "certified",
+  "level": "L4",
+  "is_simulation": true,
+  "duration_ms": 897,
+  "test_post_id": "disc_95379",
+  "test_live_url": "http://127.0.0.1:55008/mock/discourse/t/test-topic/disc_95379",
+  "is_cleaned_up": true,
+  "steps": [
+    {
+      "step": 1,
+      "name": "Validate Destination Configuration",
+      "status": "passed",
+      "timestamp": "2026-10-31T13:11:21.722Z",
+      "details": {
+        "destination_id": "dest_cert_discourse",
+        "platform_key": "discourse",
+        "url": "http://127.0.0.1:55008/mock/discourse",
+        "surface": "default"
+      }
+    },
+    {
+      "step": 2,
+      "name": "Check Connector Readiness",
+      "status": "passed",
+      "timestamp": "2026-10-31T13:11:21.723Z",
+      "details": {
+        "connector_key": "discourse",
+        "version": "1.0.0",
+        "tier": "native"
+      }
+    },
+    {
+      "step": 3,
+      "name": "Verify Authentication Configuration",
+      "status": "passed",
+      "timestamp": "2026-10-31T13:11:21.723Z",
+      "details": {
+        "auth_type": "***REDACTED***",
+        "authenticated": "***REDACTED***"
+      }
+    },
+    {
+      "step": 4,
+      "name": "Publish Test Item",
+      "status": "passed",
+      "timestamp": "2026-10-31T13:11:21.832Z",
+      "details": {
+        "test_post_id": "disc_95379",
+        "live_url": "http://127.0.0.1:55008/mock/discourse/t/test-topic/disc_95379",
+        "status": "published"
+      }
+    },
+    {
+      "step": 5,
+      "name": "Confirm Live Status & Content Retrievability",
+      "status": "passed",
+      "timestamp": "2026-10-31T13:11:21.842Z",
+      "details": {
+        "live_url": "http://127.0.0.1:55008/mock/discourse/t/test-topic/disc_95379",
+        "confirmed_title": "[CERTIFICATION-TEST] IncuBrix Test Run 060aa0"
+      }
+    },
+    {
+      "step": 6,
+      "name": "Retrieve Publication Status",
+      "status": "passed",
+      "timestamp": "2026-10-31T13:11:21.848Z",
+      "details": {
+        "retrieved_status": "published",
+        "live_url": "http://127.0.0.1:55008/mock/discourse/t/topic/disc_95379"
+      }
+    },
+    {
+      "step": 7,
+      "name": "Delete Test Item",
+      "status": "passed",
+      "timestamp": "2026-10-31T13:11:21.861Z",
+      "details": {
+        "deleted": true
+      }
+    },
+    {
+      "step": 8,
+      "name": "Confirm Gone (Cleanup Verification)",
+      "status": "passed",
+      "timestamp": "2026-10-31T13:11:21.866Z",
+      "details": {
+        "post_status_after_delete": "not_found"
+      }
+    },
+    {
+      "step": 9,
+      "name": "Store Evidence Pack",
+      "status": "passed",
+      "timestamp": "2026-10-31T13:11:22.618Z",
+      "details": {
+        "evidence_json_url": "http://localhost:4000/api/v1/storage/files/certification/cert_6d28fdcc-8fee-43fd-a1cd-990d4e060aa0.json",
+        "evidence_md_url": "http://localhost:4000/api/v1/storage/files/certification/cert_6d28fdcc-8fee-43fd-a1cd-990d4e060aa0.md"
+      }
+    },
+    {
+      "step": 10,
+      "name": "Produce Final Certification Report",
+      "status": "passed",
+      "timestamp": "2026-10-31T13:11:22.619Z",
+      "details": {
+        "final_verdict": "CERTIFIED",
+        "assigned_level": "L4"
+      }
+    }
+  ],
+  "evidence_url": "http://localhost:4000/api/v1/storage/files/certification/cert_6d28fdcc-8fee-43fd-a1cd-990d4e060aa0.json",
+  "evidence_md_url": "http://localhost:4000/api/v1/storage/files/certification/cert_6d28fdcc-8fee-43fd-a1cd-990d4e060aa0.md",
+  "error": null
+}

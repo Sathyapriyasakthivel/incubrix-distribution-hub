@@ -1,0 +1,686 @@
+openapi: 3.1.0
+info:
+  title: Longtail Distribution Hub API
+  version: 1.0.0
+  description: >
+    Longtail Distribution Hub is a unified content syndication engine that distributes posts
+    across specialized long-tail communities (Discourse, Lemmy, Dev.to, Ghost, Webhook, Assisted packs,
+    Hashnode, Slack, and MRSS video feeds) with strict server-side rule enforcement, safe timeout retries,
+    universal idempotency, and automated connector certification.
+  contact:
+    name: IncuBrix Engineering Support
+    email: engineering@incubrix.internal
+servers:
+  - url: http://localhost:4000
+    description: Local development / test environment
+
+paths:
+  /health:
+    get:
+      summary: Health check endpoint
+      description: Returns liveness status and uptime.
+      responses:
+        '200':
+          description: Service is healthy
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status: { type: string, example: "ok" }
+                  timestamp: { type: string, format: date-time }
+                  uptime: { type: number, example: 120.5 }
+
+  /ready:
+    get:
+      summary: Readiness probe
+      description: Returns readiness status, database connection, and loaded connectors.
+      responses:
+        '200':
+          description: Service is ready to accept traffic
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status: { type: string, example: "ready" }
+                  database: { type: string, example: "connected" }
+                  destinations_count: { type: integer, example: 155 }
+                  connectors_loaded: { type: integer, example: 8 }
+
+  /connector/v1:
+    get:
+      summary: List all registered connectors and manifests
+      tags: [Connector Contract]
+      responses:
+        '200':
+          description: List of connectors with manifests and capabilities
+
+  /connector/v1/{connector_key}/manifest:
+    get:
+      summary: Get raw YAML manifest for a specific connector
+      tags: [Connector Contract]
+      parameters:
+        - name: connector_key
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: Parsed manifest object
+
+  /connector/v1/{connector_key}/{method}:
+    post:
+      summary: Connector Contract Dispatcher
+      tags: [Connector Contract]
+      parameters:
+        - name: connector_key
+          in: path
+          required: true
+          schema: { type: string }
+        - name: method
+          in: path
+          required: true
+          schema:
+            type: string
+            enum: [validate, publish, get_status, delete, fetch_metrics, refresh_auth, build_assist_pack]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Standardized contract result
+        '400':
+          description: Validation or parameter error
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/ErrorResponse' }
+        '401':
+          description: Connection authentication expired
+        '422':
+          description: Specification or moderation rejection
+        '429':
+          description: Platform rate limit
+        '503':
+          description: Connector disabled or platform unavailable
+
+  /api/v1/destinations:
+    get:
+      summary: List destinations with filtering and pagination
+      tags: [Destinations]
+      parameters:
+        - name: search
+          in: query
+          schema: { type: string }
+        - name: platform
+          in: query
+          schema: { type: string }
+        - name: status
+          in: query
+          schema: { type: string }
+        - name: level
+          in: query
+          schema: { type: string }
+        - name: page
+          in: query
+          schema: { type: integer, default: 1 }
+        - name: limit
+          in: query
+          schema: { type: integer, default: 50 }
+      responses:
+        '200':
+          description: Paginated destinations catalogue
+    post:
+      summary: Create new destination configuration
+      tags: [Destinations]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/DestinationInput' }
+      responses:
+        '201':
+          description: Destination created successfully
+
+  /api/v1/destinations/{id}:
+    get:
+      summary: Get destination by ID
+      tags: [Destinations]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: Destination configuration
+    put:
+      summary: Update destination configuration
+      tags: [Destinations]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/DestinationInput' }
+      responses:
+        '200':
+          description: Updated destination
+    delete:
+      summary: Delete destination
+      tags: [Destinations]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: Deletion confirmation
+
+  /api/v1/destinations/import-csv:
+    post:
+      summary: Import destinations from CSV with row-by-row error report
+      tags: [Destinations]
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+          application/json:
+            schema:
+              type: object
+              properties:
+                csv_content: { type: string }
+      responses:
+        '200':
+          description: CSV import report
+
+  /api/v1/destinations/export-csv:
+    get:
+      summary: Export entire catalogue as CSV
+      tags: [Destinations]
+      responses:
+        '200':
+          description: CSV file stream
+          content:
+            text/csv:
+              schema: { type: string }
+
+  /api/v1/publish:
+    post:
+      summary: Submit a publication job
+      description: Evaluates rules, verifies idempotency, and queues background publishing.
+      tags: [Publishing]
+      headers:
+        Idempotency-Key:
+          schema: { type: string }
+          description: Unique idempotency key to prevent duplicate publishing
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/PublishRequest' }
+      responses:
+        '202':
+          description: Job accepted and queued for background execution
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  job_id: { type: string, example: "job_a1b2c3d4" }
+                  status:
+                    type: string
+                    enum: [queued, running, succeeded, failed]
+                    example: "queued"
+                  progress: { type: integer, example: 0 }
+                  run_at: { type: string, format: date-time, nullable: true }
+                  retry_at: { type: string, format: date-time, nullable: true }
+        '409':
+          description: Idempotency conflict
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/ErrorResponse' }
+        '422':
+          description: Posting rule violation or format spec breach
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/ErrorResponse' }
+
+  /api/v1/publish/rules/evaluate:
+    post:
+      summary: Pre-check posting rules without publishing
+      tags: [Publishing]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/PublishRequest' }
+      responses:
+        '200':
+          description: Rule evaluation decision (ALLOW, BLOCK, RESCHEDULE)
+
+  /api/v1/publish/tailor:
+    post:
+      summary: Tailor content for destination platform style and limits
+      tags: [Publishing]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/PublishRequest' }
+      responses:
+        '200':
+          description: Tailored content object
+
+  /api/v1/publish/recommender:
+    post:
+      summary: Recommend top matching destinations for content
+      tags: [Publishing]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title: { type: string }
+                body: { type: string }
+                tags: { type: array, items: { type: string } }
+                is_promotional: { type: boolean }
+                limit: { type: integer, default: 10 }
+      responses:
+        '200':
+          description: Ranked recommendations with scores and match rationale
+
+  /api/v1/jobs/{id}:
+    get:
+      summary: Poll background publication job status
+      tags: [Jobs]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: Job execution status and manifest
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/JobResponse' }
+
+  /api/v1/certification/run/{destination_id}:
+    post:
+      summary: Run 10-step connector certification on a destination
+      tags: [Certification]
+      parameters:
+        - name: destination_id
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: Step-by-step certification audit and evidence pack
+
+  /api/v1/certification/history:
+    get:
+      summary: List past certification runs
+      tags: [Certification]
+      responses:
+        '200':
+          description: Certification history
+
+  /api/v1/certification/recertify-due:
+    post:
+      summary: Automated recertification cycle for destinations older than 30 days
+      tags: [Certification]
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                max_age_days: { type: integer, default: 30 }
+                limit: { type: integer, default: 50 }
+      responses:
+        '200':
+          description: Recertification cycle summary report
+
+  /api/v1/connectors:
+    get:
+      summary: List registered connectors and statuses
+      tags: [Connectors]
+      responses:
+        '200':
+          description: List of registered connectors
+
+  /api/v1/connectors/{key}/kill-switch:
+    post:
+      summary: Toggle connector kill switch (CONNECTOR_DISABLED)
+      tags: [Connectors]
+      parameters:
+        - name: key
+          in: path
+          required: true
+          schema: { type: string }
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                enable: { type: boolean, description: "True to enable, false to disable, omitted to toggle" }
+      responses:
+        '200':
+          description: Kill switch state
+
+  /api/v1/connectors/{key}/metrics:
+    get:
+      summary: Fetch normalized engagement metrics
+      tags: [Connectors]
+      parameters:
+        - name: key
+          in: path
+          required: true
+          schema: { type: string }
+        - name: post_id
+          in: query
+          required: true
+          schema: { type: string }
+        - name: since
+          in: query
+          schema: { type: string }
+      responses:
+        '200':
+          description: Normalized metrics object
+
+  /api/v1/assisted/generate:
+    post:
+      summary: Generate human posting pack for assisted connectors
+      tags: [Assisted Publishing]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [destination_id]
+              properties:
+                destination_id: { type: string }
+                rendition: { type: object }
+      responses:
+        '200':
+          description: Formatted pack instructions, markdown, and clipboard snippets
+
+  /api/v1/storage/upload:
+    post:
+      summary: Upload input file or media attachment
+      tags: [Storage]
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required: [file]
+              properties:
+                file:
+                  type: string
+                  format: binary
+      responses:
+        '201':
+          description: File uploaded successfully
+
+  /api/v1/storage/files/{category}/{filename}:
+    get:
+      summary: Download stored file or publication artifact
+      tags: [Storage]
+      parameters:
+        - name: category
+          in: path
+          required: true
+          schema: { type: string }
+        - name: filename
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: File download stream
+        '404':
+          description: File not found
+
+  /api/v1/storage/assisted/{filename}:
+    get:
+      summary: Download assisted connector pack files
+      tags: [Storage]
+      parameters:
+        - name: filename
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: Assisted pack file stream
+        '404':
+          description: File not found
+
+  /api/v1/audit/logs:
+    get:
+      summary: Query system audit logs
+      tags: [Audit]
+      parameters:
+        - name: event_type
+          in: query
+          schema: { type: string }
+        - name: limit
+          in: query
+          schema: { type: integer, default: 50 }
+      responses:
+        '200':
+          description: Array of audit events
+
+  /api/v1/audit/dashboard-stats:
+    get:
+      summary: Overview dashboard statistics
+      tags: [Audit]
+      responses:
+        '200':
+          description: Aggregate statistics for catalogue, jobs, and rule violations
+
+  /feeds/{destination}.xml:
+    get:
+      summary: Media RSS (MRSS) 2.0 Video Feed
+      tags: [Feeds]
+      parameters:
+        - name: destination
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: Valid Media RSS 2.0 XML with video items
+          content:
+            application/rss+xml:
+              schema: { type: string }
+        '404':
+          description: Destination not found
+
+  /api/v1/alerts:
+    get:
+      summary: Query system alerts including recertification demotions
+      tags: [Alerts]
+      parameters:
+        - name: level
+          in: query
+          schema: { type: string, enum: [INFO, WARN, ERROR, CRITICAL] }
+        - name: limit
+          in: query
+          schema: { type: integer, default: 50 }
+      responses:
+        '200':
+          description: List of stored system and recertification alerts
+
+  /api/v1/destinations/{id}/capture-rules:
+    post:
+      summary: Extract and propose community posting rules from guidelines URL
+      tags: [Destinations]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: Extracted proposed rules with quotes and confidence score
+
+  /api/v1/destinations/{id}/rules/confirm:
+    post:
+      summary: Human confirmation of proposed posting rules
+      tags: [Destinations]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                confirmed_by: { type: string }
+                overrides: { type: object }
+      responses:
+        '200':
+          description: Confirmed active posting rules
+
+  /api/v1/sim/inject:
+    post:
+      summary: Inject reviewer-controllable platform fault in simulation mode
+      tags: [Simulation]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [fault]
+              properties:
+                fault: { type: string, enum: [429, 401, 422, 500, timeout_before_commit, timeout_after_commit, rename_field, revoke] }
+                platform: { type: string, default: "all" }
+                reset_s: { type: integer, default: 15 }
+      responses:
+        '200':
+          description: Fault injection confirmation
+
+  /api/v1/sim/reset:
+    post:
+      summary: Reset all injected simulation faults
+      tags: [Simulation]
+      responses:
+        '200':
+          description: Fault reset confirmation
+
+  /api/v1/jobs:
+    get:
+      summary: List recent publishing jobs
+      tags: [Publishing]
+      parameters:
+        - name: limit
+          in: query
+          schema: { type: integer, default: 20 }
+      responses:
+        '200':
+          description: List of recent publications and jobs
+
+components:
+  schemas:
+    ErrorResponse:
+      type: object
+      required: [error]
+      properties:
+        error:
+          type: object
+          required: [code, message, retryable, details]
+          properties:
+            code:
+              type: string
+              example: "DEST_SPEC_VIOLATION"
+            message:
+              type: string
+              example: "Title exceeds maximum allowed length"
+            retryable:
+              type: boolean
+              example: false
+            details:
+              type: object
+
+    JobResponse:
+      type: object
+      required: [job_id, status, progress]
+      properties:
+        job_id: { type: string, example: "job_a1b2c3d4" }
+        status:
+          type: string
+          enum: [queued, running, succeeded, failed]
+          example: "queued"
+        progress: { type: integer, example: 100 }
+        run_at: { type: string, format: date-time, nullable: true }
+        retry_at: { type: string, format: date-time, nullable: true }
+        live_url: { type: string, nullable: true }
+        platform_post_id: { type: string, nullable: true }
+        manifest: { type: object, nullable: true }
+        error:
+          type: object
+          nullable: true
+          required: [code, message, retryable, details]
+          properties:
+            code: { type: string, example: "DEST_SPEC_VIOLATION" }
+            message: { type: string, example: "Format limit exceeded" }
+            retryable: { type: boolean, example: false }
+            details: { type: object }
+
+    PublishRequest:
+      type: object
+      required: [destination_id, title, body]
+      properties:
+        destination_id: { type: string, example: "dest_12345" }
+        title: { type: string, example: "How We Scaled Video Publishing to Long-Tail Audiences" }
+        body: { type: string, example: "Full tutorial and distribution architecture breakdown..." }
+        canonical_url: { type: string, example: "https://example.com/blog/video-scaling" }
+        media_urls: { type: array, items: { type: string } }
+        is_ai_generated: { type: boolean, default: false }
+        is_promotional: { type: boolean, default: false }
+        callback_url: { type: string, example: "https://partner.example/webhook" }
+        simulation: { type: boolean, default: true }
+
+    DestinationInput:
+      type: object
+      required: [name, url, platform_key]
+      properties:
+        name: { type: string, example: "AI Engineers Community" }
+        url: { type: string, example: "https://community.ai-engineers.example" }
+        platform_key: { type: string, example: "discourse" }
+        surface: { type: string, example: "topic" }
+        category: { type: string, example: "AI Architecture" }
+        audience_tags: { type: array, items: { type: string } }
+        frequency_cap: { type: string, example: "1/7d" }
+        self_promo_allowed: { type: boolean, default: false }
+        link_policy: { type: string, enum: [allowed, no_links, max_1], default: "allowed" }
+        disclosure_required: { type: boolean, default: false }
+        connector_key: { type: string, example: "discourse" }
+        relevance_score: { type: integer, minimum: 1, maximum: 5, default: 3 }
+        simulation_mode: { type: boolean, default: true }

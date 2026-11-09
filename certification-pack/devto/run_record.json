@@ -1,0 +1,122 @@
+{
+  "mode": "SIMULATION_MOCK",
+  "run_id": "cert_faff176a-bf72-475e-8a94-e8721bd300af",
+  "destination_id": "dest_cert_devto",
+  "destination_name": "Certified Dev.to Technical Network",
+  "platform_key": "devto",
+  "connector_key": "devto",
+  "status": "certified",
+  "level": "L4",
+  "is_simulation": true,
+  "duration_ms": 677,
+  "test_post_id": "devto_76700",
+  "test_live_url": "http://127.0.0.1:55008/mock/devto/articles/devto_76700",
+  "is_cleaned_up": true,
+  "steps": [
+    {
+      "step": 1,
+      "name": "Validate Destination Configuration",
+      "status": "passed",
+      "timestamp": "2026-10-31T13:11:23.357Z",
+      "details": {
+        "destination_id": "dest_cert_devto",
+        "platform_key": "devto",
+        "url": "http://127.0.0.1:55008/mock/devto",
+        "surface": "default"
+      }
+    },
+    {
+      "step": 2,
+      "name": "Check Connector Readiness",
+      "status": "passed",
+      "timestamp": "2026-10-31T13:11:23.357Z",
+      "details": {
+        "connector_key": "devto",
+        "version": "1.0.0",
+        "tier": "native"
+      }
+    },
+    {
+      "step": 3,
+      "name": "Verify Authentication Configuration",
+      "status": "passed",
+      "timestamp": "2026-10-31T13:11:23.357Z",
+      "details": {
+        "auth_type": "***REDACTED***",
+        "authenticated": "***REDACTED***"
+      }
+    },
+    {
+      "step": 4,
+      "name": "Publish Test Item",
+      "status": "passed",
+      "timestamp": "2026-10-31T13:11:23.364Z",
+      "details": {
+        "test_post_id": "devto_76700",
+        "live_url": "http://127.0.0.1:55008/mock/devto/articles/devto_76700",
+        "status": "published"
+      }
+    },
+    {
+      "step": 5,
+      "name": "Confirm Live Status & Content Retrievability",
+      "status": "passed",
+      "timestamp": "2026-10-31T13:11:23.369Z",
+      "details": {
+        "live_url": "http://127.0.0.1:55008/mock/devto/articles/devto_76700",
+        "confirmed_title": "[CERTIFICATION-TEST] IncuBrix Test Run d300af"
+      }
+    },
+    {
+      "step": 6,
+      "name": "Retrieve Publication Status",
+      "status": "passed",
+      "timestamp": "2026-10-31T13:11:23.373Z",
+      "details": {
+        "retrieved_status": "published",
+        "live_url": "http://127.0.0.1:55008/mock/devto/articles/devto_76700"
+      }
+    },
+    {
+      "step": 7,
+      "name": "Delete Test Item",
+      "status": "passed",
+      "timestamp": "2026-10-31T13:11:23.379Z",
+      "details": {
+        "deleted": true
+      }
+    },
+    {
+      "step": 8,
+      "name": "Confirm Gone (Cleanup Verification)",
+      "status": "passed",
+      "timestamp": "2026-10-31T13:11:23.384Z",
+      "details": {
+        "post_status_after_delete": "not_found"
+      }
+    },
+    {
+      "step": 9,
+      "name": "Store Evidence Pack",
+      "status": "passed",
+      "timestamp": "2026-10-31T13:11:24.033Z",
+      "details": {
+        "evidence_json_url": "http://localhost:4000/api/v1/storage/files/certification/cert_faff176a-bf72-475e-8a94-e8721bd300af.json",
+        "evidence_md_url": "http://localhost:4000/api/v1/storage/files/certification/cert_faff176a-bf72-475e-8a94-e8721bd300af.md"
+      }
+    },
+    {
+      "step": 10,
+      "name": "Produce Final Certification Report",
+      "status": "passed",
+      "timestamp": "2026-10-31T13:11:24.033Z",
+      "details": {
+        "final_verdict": "CERTIFIED",
+        "assigned_level": "L4"
+      }
+    }
+  ],
+  "evidence_url": "http://localhost:4000/api/v1/storage/files/certification/cert_faff176a-bf72-475e-8a94-e8721bd300af.json",
+  "evidence_md_url": "http://localhost:4000/api/v1/storage/files/certification/cert_faff176a-bf72-475e-8a94-e8721bd300af.md",
+  "error": null
+}

@@ -1,0 +1,26 @@
+key: mrss
+name: MRSS Video Feed
+version: 1.0.0
+tier: feed
+auth: none
+surfaces:
+  - key: default
+    content_types: [text, video, image]
+    spec:
+      title_max_chars: 255
+      body_max_chars: 10000
+      links_allowed: true
+      allowed_media_types: ["video/mp4", "video/webm", "image/jpeg", "image/png"]
+rate_limits:
+  per_connection:
+    requests: 120
+    per_seconds: 60
+capabilities: [publish, status, delete]
+error_map:
+  "429": PLATFORM_RATE_LIMIT
+  "401": CONNECTION_AUTH_EXPIRED
+  "403": CONNECTION_AUTH_EXPIRED
+  "422": PLATFORM_CONTENT_REJECTED
+  "4xx": PLATFORM_CONTENT_REJECTED
+  "5xx": PLATFORM_UNAVAILABLE
+instance_param: feed_slug

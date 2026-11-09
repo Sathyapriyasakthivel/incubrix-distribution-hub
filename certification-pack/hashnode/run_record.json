@@ -1,0 +1,78 @@
+{
+  "mode": "SIMULATION_MOCK",
+  "run_id": "cert_0ad6c347-3b43-470f-a9df-8a789232d273",
+  "destination_id": "dest_cert_hashnode",
+  "destination_name": "Certified Hashnode Developer Blog",
+  "platform_key": "hashnode",
+  "connector_key": "hashnode",
+  "status": "failed",
+  "level": "L0",
+  "is_simulation": true,
+  "duration_ms": 2308,
+  "test_post_id": "hn_41130",
+  "test_live_url": "https://hashnode.com/post/hn_41130",
+  "is_cleaned_up": true,
+  "steps": [
+    {
+      "step": 1,
+      "name": "Validate Destination Configuration",
+      "status": "passed",
+      "timestamp": "2026-10-31T13:11:24.556Z",
+      "details": {
+        "destination_id": "dest_cert_hashnode",
+        "platform_key": "hashnode",
+        "url": "http://127.0.0.1:55008/mock/hashnode",
+        "surface": "default"
+      }
+    },
+    {
+      "step": 2,
+      "name": "Check Connector Readiness",
+      "status": "passed",
+      "timestamp": "2026-10-31T13:11:24.556Z",
+      "details": {
+        "connector_key": "hashnode",
+        "version": "1.0.0",
+        "tier": "native"
+      }
+    },
+    {
+      "step": 3,
+      "name": "Verify Authentication Configuration",
+      "status": "passed",
+      "timestamp": "2026-10-31T13:11:24.556Z",
+      "details": {
+        "auth_type": "***REDACTED***",
+        "authenticated": "***REDACTED***"
+      }
+    },
+    {
+      "step": 4,
+      "name": "Publish Test Item",
+      "status": "passed",
+      "timestamp": "2026-10-31T13:11:24.557Z",
+      "details": {
+        "test_post_id": "hn_41130",
+        "live_url": "https://hashnode.com/post/hn_41130",
+        "status": "published"
+      }
+    },
+    {
+      "step": 5,
+      "name": "Certification Error",
+      "status": "failed",
+      "timestamp": "2026-10-31T13:11:25.430Z",
+      "details": {
+        "error_code": "CERTIFICATION_FAILED",
+        "error_message": "Live URL returned non-200 status: HTTP 404",
+        "is_transient": false
+      }
+    }
+  ],
+  "evidence_url": "http://localhost:4000/api/v1/storage/files/certification/cert_0ad6c347-3b43-470f-a9df-8a789232d273.json",
+  "evidence_md_url": "http://localhost:4000/api/v1/storage/files/certification/cert_0ad6c347-3b43-470f-a9df-8a789232d273.md",
+  "error": {
+    "code": "CERTIFICATION_FAILED",
+    "message": "Live URL returned non-200 status: HTTP 404"
+  }
+}

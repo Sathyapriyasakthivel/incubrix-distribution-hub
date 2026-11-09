@@ -1,0 +1,37 @@
+{
+  "index": 5,
+  "id": "case_05_oversize_title_rejected",
+  "case_description": "Hard case: Post title exceeding connector maximum length without tailoring",
+  "expected_outcome": {
+    "status": "failed",
+    "error_code": "DEST_SPEC_VIOLATION"
+  },
+  "actual_status": "failed",
+  "actual_error_code": "DEST_SPEC_VIOLATION",
+  "expectation_matched": true,
+  "duration_ms": 17,
+  "live_url": null,
+  "platform_post_id": null,
+  "response_data": {
+    "error": {
+      "code": "DEST_SPEC_VIOLATION",
+      "message": "Title exceeds maximum allowed length of 200 chars (got 212); Lemmy post name must not exceed 200 characters",
+      "retryable": false,
+      "details": {
+        "code": "DEST_SPEC_VIOLATION",
+        "violations": [
+          {
+            "rule": "DEST_SPEC_VIOLATION",
+            "field": "title",
+            "message": "Title exceeds maximum allowed length of 200 chars (got 212)"
+          },
+          {
+            "rule": "DEST_SPEC_VIOLATION",
+            "field": "title",
+            "message": "Lemmy post name must not exceed 200 characters"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,153 @@
+{
+  "index": 7,
+  "id": "case_07_valid_devto_canonical",
+  "case_description": "Valid developer tutorial publication with canonical URL to Dev.to",
+  "expected_outcome": {
+    "status": "succeeded"
+  },
+  "actual_status": "succeeded",
+  "actual_error_code": null,
+  "expectation_matched": true,
+  "duration_ms": 435,
+  "live_url": "http://127.0.0.1:55008/mock/devto/articles/devto_61816",
+  "platform_post_id": "devto_61816",
+  "response_data": {
+    "job_id": "job_4e13458f-31fa-4e5d-9d40-3620de42cb3b",
+    "destination_id": "dest_cert_devto",
+    "destination_name": "Certified Dev.to Technical Network",
+    "connector_key": "devto",
+    "idempotency_key": "batch_run_1793452290347_007",
+    "status": "succeeded",
+    "progress": 100,
+    "run_at": null,
+    "title": "Building Safe Retries across Network Timeouts with Markers",
+    "platform_post_id": "devto_61816",
+    "live_url": "http://127.0.0.1:55008/mock/devto/articles/devto_61816",
+    "rule_decision": null,
+    "rule_violations": [],
+    "manifest": {
+      "version": "1.0.0",
+      "generator": "IncuBrix Long-Tail Distribution Network Engine",
+      "timestamp": "2026-10-31T13:11:30.364Z",
+      "connector": {
+        "key": "devto",
+        "execution_time_ms": 9
+      },
+      "models_and_providers": {
+        "provider": "mock",
+        "model": "deterministic-heuristic",
+        "version": "1.0.0",
+        "is_commercial_licensed": true
+      },
+      "content_classification": {
+        "is_ai_generated": false,
+        "marked_as_ai": false,
+        "disclosure_added": false,
+        "disclosure_text": null,
+        "generation_method": "human_authored"
+      },
+      "seed": {
+        "value": null,
+        "reason": "Deterministic heuristic execution, non-stochastic model"
+      },
+      "settings": {
+        "environment": "development",
+        "simulation": true,
+        "destination_id": "dest_cert_devto",
+        "platform_key": "devto"
+      },
+      "timings": {
+        "started_at": "2026-10-31T13:11:30.355Z",
+        "completed_at": "2026-10-31T13:11:30.364Z",
+        "duration_ms": 9
+      },
+      "cost_estimate": {
+        "unit": "per_publication",
+        "cost_usd": 0,
+        "cost_per_1000_usd": 0,
+        "currency": "USD"
+      },
+      "warnings": [],
+      "licensing": {
+        "declared_licenses": [
+          "---------",
+          "----------------------",
+          "MIT",
+          "Node.js (MIT-style)",
+          "Apache-2.0",
+          "ISC",
+          "BSD-2-Clause",
+          "Tool",
+          "------"
+        ],
+        "commercial_use_allowed": true,
+        "agpl_free": true,
+        "source_reference": "SOURCES.md"
+      }
+    },
+    "output_manifest": {
+      "version": "1.0.0",
+      "generator": "IncuBrix Long-Tail Distribution Network Engine",
+      "timestamp": "2026-10-31T13:11:30.364Z",
+      "connector": {
+        "key": "devto",
+        "execution_time_ms": 9
+      },
+      "models_and_providers": {
+        "provider": "mock",
+        "model": "deterministic-heuristic",
+        "version": "1.0.0",
+        "is_commercial_licensed": true
+      },
+      "content_classification": {
+        "is_ai_generated": false,
+        "marked_as_ai": false,
+        "disclosure_added": false,
+        "disclosure_text": null,
+        "generation_method": "human_authored"
+      },
+      "seed": {
+        "value": null,
+        "reason": "Deterministic heuristic execution, non-stochastic model"
+      },
+      "settings": {
+        "environment": "development",
+        "simulation": true,
+        "destination_id": "dest_cert_devto",
+        "platform_key": "devto"
+      },
+      "timings": {
+        "started_at": "2026-10-31T13:11:30.355Z",
+        "completed_at": "2026-10-31T13:11:30.364Z",
+        "duration_ms": 9
+      },
+      "cost_estimate": {
+        "unit": "per_publication",
+        "cost_usd": 0,
+        "cost_per_1000_usd": 0,
+        "currency": "USD"
+      },
+      "warnings": [],
+      "licensing": {
+        "declared_licenses": [
+          "---------",
+          "----------------------",
+          "MIT",
+          "Node.js (MIT-style)",
+          "Apache-2.0",
+          "ISC",
+          "BSD-2-Clause",
+          "Tool",
+          "------"
+        ],
+        "commercial_use_allowed": true,
+        "agpl_free": true,
+        "source_reference": "SOURCES.md"
+      }
+    },
+    "tailoring_warnings": [],
+    "error": null,
+    "created_at": "2026-10-31T13:11:30.354Z",
+    "updated_at": "2026-10-31T13:11:30.364Z"
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "mode": "SIMULATION_MOCK",
+  "run_id": "cert_8144b87c-53dd-4126-a5f3-6e8a195ee0ae",
+  "destination_id": "dest_cert_webhook",
+  "destination_name": "Certified Webhook Syndicate Receiver",
+  "platform_key": "webhook",
+  "connector_key": "webhook",
+  "status": "certified",
+  "level": "L3",
+  "is_simulation": true,
+  "duration_ms": 834,
+  "test_post_id": "wh_22155",
+  "test_live_url": "http://127.0.0.1:55008/mock/webhook/events/wh_22155",
+  "is_cleaned_up": true,
+  "steps": [
+    {
+      "step": 1,
+      "name": "Validate Destination Configuration",
+      "status": "passed",
+      "timestamp": "2026-10-31T13:11:28.100Z",
+      "details": {
+        "destination_id": "dest_cert_webhook",
+        "platform_key": "webhook",
+        "url": "http://127.0.0.1:55008/mock/webhook",
+        "surface": "default"
+      }
+    },
+    {
+      "step": 2,
+      "name": "Check Connector Readiness",
+      "status": "passed",
+      "timestamp": "2026-10-31T13:11:28.100Z",
+      "details": {
+        "connector_key": "webhook",
+        "version": "1.0.0",
+        "tier": "protocol"
+      }
+    },
+    {
+      "step": 3,
+      "name": "Verify Authentication Configuration",
+      "status": "passed",
+      "timestamp": "2026-10-31T13:11:28.100Z",
+      "details": {
+        "auth_type": "***REDACTED***",
+        "authenticated": "***REDACTED***"
+      }
+    },
+    {
+      "step": 4,
+      "name": "Publish Test Item",
+      "status": "passed",
+      "timestamp": "2026-10-31T13:11:28.107Z",
+      "details": {
+        "test_post_id": "wh_22155",
+        "live_url": "http://127.0.0.1:55008/mock/webhook/events/wh_22155",
+        "status": "published"
+      }
+    },
+    {
+      "step": 5,
+      "name": "Confirm Live Status & Content Retrievability",
+      "status": "passed",
+      "timestamp": "2026-10-31T13:11:28.112Z",
+      "details": {
+        "live_url": "http://127.0.0.1:55008/mock/webhook/events/wh_22155",
+        "confirmed_title": "[CERTIFICATION-TEST] IncuBrix Test Run 5ee0ae"
+      }
+    },
+    {
+      "step": 6,
+      "name": "Retrieve Publication Status",
+      "status": "passed",
+      "timestamp": "2026-10-31T13:11:28.116Z",
+      "details": {
+        "retrieved_status": "published",
+        "live_url": "http://127.0.0.1:55008/mock/webhook/events/wh_22155"
+      }
+    },
+    {
+      "step": 7,
+      "name": "Delete Test Item",
+      "status": "passed",
+      "timestamp": "2026-10-31T13:11:28.119Z",
+      "details": {
+        "deleted": true
+      }
+    },
+    {
+      "step": 8,
+      "name": "Confirm Gone (Cleanup Verification)",
+      "status": "passed",
+      "timestamp": "2026-10-31T13:11:28.122Z",
+      "details": {
+        "post_status_after_delete": "not_found"
+      }
+    },
+    {
+      "step": 9,
+      "name": "Store Evidence Pack",
+      "status": "passed",
+      "timestamp": "2026-10-31T13:11:28.933Z",
+      "details": {
+        "evidence_json_url": "http://localhost:4000/api/v1/storage/files/certification/cert_8144b87c-53dd-4126-a5f3-6e8a195ee0ae.json",
+        "evidence_md_url": "http://localhost:4000/api/v1/storage/files/certification/cert_8144b87c-53dd-4126-a5f3-6e8a195ee0ae.md"
+      }
+    },
+    {
+      "step": 10,
+      "name": "Produce Final Certification Report",
+      "status": "passed",
+      "timestamp": "2026-10-31T13:11:28.934Z",
+      "details": {
+        "final_verdict": "CERTIFIED",
+        "assigned_level": "L3"
+      }
+    }
+  ],
+  "evidence_url": "http://localhost:4000/api/v1/storage/files/certification/cert_8144b87c-53dd-4126-a5f3-6e8a195ee0ae.json",
+  "evidence_md_url": "http://localhost:4000/api/v1/storage/files/certification/cert_8144b87c-53dd-4126-a5f3-6e8a195ee0ae.md",
+  "error": null
+}

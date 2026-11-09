@@ -1,0 +1,654 @@
+{
+  "batch_runner_version": "2.0.0",
+  "timestamp": "2026-10-31T13:11:31.199Z",
+  "api_target": "http://127.0.0.1:55008/api/v1",
+  "input_path": "D:\\network4 project\\test-pack\\inputs\\hard_cases_batch.json",
+  "output_dir": "D:\\network4 project\\test-pack\\outputs",
+  "total_items": 8,
+  "succeeded": 3,
+  "failed": 5,
+  "expectations_evaluated": 8,
+  "expectations_matched": 6,
+  "total_duration_ms": 1389,
+  "results": [
+    {
+      "index": 1,
+      "id": "case_01_valid_discourse",
+      "case_description": "Valid publication to certified Discourse forum",
+      "expected_outcome": {
+        "status": "succeeded"
+      },
+      "actual_status": "succeeded",
+      "actual_error_code": null,
+      "expectation_matched": true,
+      "duration_ms": 429,
+      "live_url": "http://127.0.0.1:55008/mock/discourse/t/test-topic/disc_94830",
+      "platform_post_id": "disc_94830",
+      "response_data": {
+        "job_id": "job_62288962-3dde-4da9-aecd-c1491504daea",
+        "destination_id": "dest_cert_discourse",
+        "destination_name": "Certified Discourse Forum",
+        "connector_key": "discourse",
+        "idempotency_key": "batch_run_1793452289810_001",
+        "status": "succeeded",
+        "progress": 100,
+        "run_at": null,
+        "title": "Scaling Distributed Video Pipelines across Long-Tail Communities",
+        "platform_post_id": "disc_94830",
+        "live_url": "http://127.0.0.1:55008/mock/discourse/t/test-topic/disc_94830",
+        "rule_decision": null,
+        "rule_violations": [],
+        "manifest": {
+          "version": "1.0.0",
+          "generator": "IncuBrix Long-Tail Distribution Network Engine",
+          "timestamp": "2026-10-31T13:11:29.831Z",
+          "connector": {
+            "key": "discourse",
+            "execution_time_ms": 5
+          },
+          "models_and_providers": {
+            "provider": "mock",
+            "model": "deterministic-heuristic",
+            "version": "1.0.0",
+            "is_commercial_licensed": true
+          },
+          "content_classification": {
+            "is_ai_generated": false,
+            "marked_as_ai": false,
+            "disclosure_added": false,
+            "disclosure_text": null,
+            "generation_method": "human_authored"
+          },
+          "seed": {
+            "value": null,
+            "reason": "Deterministic heuristic execution, non-stochastic model"
+          },
+          "settings": {
+            "environment": "development",
+            "simulation": true,
+            "destination_id": "dest_cert_discourse",
+            "platform_key": "discourse"
+          },
+          "timings": {
+            "started_at": "2026-10-31T13:11:29.822Z",
+            "completed_at": "2026-10-31T13:11:29.827Z",
+            "duration_ms": 5
+          },
+          "cost_estimate": {
+            "unit": "per_publication",
+            "cost_usd": 0,
+            "cost_per_1000_usd": 0,
+            "currency": "USD"
+          },
+          "warnings": [],
+          "licensing": {
+            "declared_licenses": [
+              "---------",
+              "----------------------",
+              "MIT",
+              "Node.js (MIT-style)",
+              "Apache-2.0",
+              "ISC",
+              "BSD-2-Clause",
+              "Tool",
+              "------"
+            ],
+            "commercial_use_allowed": true,
+            "agpl_free": true,
+            "source_reference": "SOURCES.md"
+          }
+        },
+        "output_manifest": {
+          "version": "1.0.0",
+          "generator": "IncuBrix Long-Tail Distribution Network Engine",
+          "timestamp": "2026-10-31T13:11:29.831Z",
+          "connector": {
+            "key": "discourse",
+            "execution_time_ms": 5
+          },
+          "models_and_providers": {
+            "provider": "mock",
+            "model": "deterministic-heuristic",
+            "version": "1.0.0",
+            "is_commercial_licensed": true
+          },
+          "content_classification": {
+            "is_ai_generated": false,
+            "marked_as_ai": false,
+            "disclosure_added": false,
+            "disclosure_text": null,
+            "generation_method": "human_authored"
+          },
+          "seed": {
+            "value": null,
+            "reason": "Deterministic heuristic execution, non-stochastic model"
+          },
+          "settings": {
+            "environment": "development",
+            "simulation": true,
+            "destination_id": "dest_cert_discourse",
+            "platform_key": "discourse"
+          },
+          "timings": {
+            "started_at": "2026-10-31T13:11:29.822Z",
+            "completed_at": "2026-10-31T13:11:29.827Z",
+            "duration_ms": 5
+          },
+          "cost_estimate": {
+            "unit": "per_publication",
+            "cost_usd": 0,
+            "cost_per_1000_usd": 0,
+            "currency": "USD"
+          },
+          "warnings": [],
+          "licensing": {
+            "declared_licenses": [
+              "---------",
+              "----------------------",
+              "MIT",
+              "Node.js (MIT-style)",
+              "Apache-2.0",
+              "ISC",
+              "BSD-2-Clause",
+              "Tool",
+              "------"
+            ],
+            "commercial_use_allowed": true,
+            "agpl_free": true,
+            "source_reference": "SOURCES.md"
+          }
+        },
+        "tailoring_warnings": [],
+        "error": null,
+        "created_at": "2026-10-31T13:11:29.819Z",
+        "updated_at": "2026-10-31T13:11:29.832Z"
+      }
+    },
+    {
+      "index": 2,
+      "id": "case_02_self_promo_violation",
+      "case_description": "Hard case: Promotional submission to a community with strict zero-promo policy",
+      "expected_outcome": {
+        "status": "failed",
+        "error_code": "DEST_RULE_SELF_PROMO"
+      },
+      "actual_status": "failed",
+      "actual_error_code": "DEST_RULE_SELF_PROMO",
+      "expectation_matched": true,
+      "duration_ms": 42,
+      "live_url": null,
+      "platform_post_id": null,
+      "response_data": {
+        "error": {
+          "code": "DEST_RULE_SELF_PROMO",
+          "message": "Frequency cap exceeded: Destination allows at most 1 post(s) per 168 hours. Currently 1 recent post(s). Window resets at 2026-11-07T13:11:29.819Z.; Destination 'Certified Discourse Forum' strictly prohibits self-promotional content.",
+          "retryable": false,
+          "details": {
+            "violations": [
+              {
+                "rule": "DEST_RULE_FREQUENCY_CAP",
+                "field": "frequency_cap",
+                "retry_at": "2026-11-07T13:11:29.819Z",
+                "message": "Frequency cap exceeded: Destination allows at most 1 post(s) per 168 hours. Currently 1 recent post(s). Window resets at 2026-11-07T13:11:29.819Z."
+              },
+              {
+                "rule": "DEST_RULE_SELF_PROMO",
+                "field": "is_promotional",
+                "message": "Destination 'Certified Discourse Forum' strictly prohibits self-promotional content."
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "index": 3,
+      "id": "case_03_ai_disclosure_required",
+      "case_description": "Hard case: AI generated content to destination requiring disclosure without disclosure flag",
+      "expected_outcome": {
+        "status": "failed",
+        "error_code": "DEST_RULE_AI_DISCLOSURE"
+      },
+      "actual_status": "failed",
+      "actual_error_code": "DEST_RULE_AI_DISCLOSURE",
+      "expectation_matched": true,
+      "duration_ms": 8,
+      "live_url": null,
+      "platform_post_id": null,
+      "response_data": {
+        "error": {
+          "code": "DEST_RULE_AI_DISCLOSURE",
+          "message": "Frequency cap exceeded: Destination allows at most 1 post(s) per 168 hours. Currently 1 recent post(s). Window resets at 2026-11-07T13:11:29.819Z.; Destination 'Certified Discourse Forum' requires explicit AI disclosure for AI-generated content.",
+          "retryable": false,
+          "details": {
+            "violations": [
+              {
+                "rule": "DEST_RULE_FREQUENCY_CAP",
+                "field": "frequency_cap",
+                "retry_at": "2026-11-07T13:11:29.819Z",
+                "message": "Frequency cap exceeded: Destination allows at most 1 post(s) per 168 hours. Currently 1 recent post(s). Window resets at 2026-11-07T13:11:29.819Z."
+              },
+              {
+                "rule": "DEST_RULE_AI_DISCLOSURE",
+                "field": "ai_disclosure",
+                "message": "Destination 'Certified Discourse Forum' requires explicit AI disclosure for AI-generated content."
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "index": 4,
+      "id": "case_04_ai_disclosure_tailored",
+      "case_description": "Hard case: AI content automatically amended with disclosure when tailor: true",
+      "expected_outcome": {
+        "status": "succeeded"
+      },
+      "actual_status": "failed",
+      "actual_error_code": "DEST_RULE_FREQUENCY_CAP",
+      "expectation_matched": false,
+      "duration_ms": 9,
+      "live_url": null,
+      "platform_post_id": null,
+      "response_data": {
+        "error": {
+          "code": "DEST_RULE_FREQUENCY_CAP",
+          "message": "Frequency cap exceeded: Destination allows at most 1 post(s) per 168 hours. Currently 1 recent post(s). Window resets at 2026-11-07T13:11:29.819Z.",
+          "retryable": false,
+          "details": {
+            "code": "DEST_RULE_FREQUENCY_CAP",
+            "retry_at": "2026-11-07T13:11:29.819Z",
+            "reschedule_after": "2026-11-07T13:11:29.819Z",
+            "violations": [
+              {
+                "rule": "DEST_RULE_FREQUENCY_CAP",
+                "field": "frequency_cap",
+                "retry_at": "2026-11-07T13:11:29.819Z",
+                "message": "Frequency cap exceeded: Destination allows at most 1 post(s) per 168 hours. Currently 1 recent post(s). Window resets at 2026-11-07T13:11:29.819Z."
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "index": 5,
+      "id": "case_05_oversize_title_rejected",
+      "case_description": "Hard case: Post title exceeding connector maximum length without tailoring",
+      "expected_outcome": {
+        "status": "failed",
+        "error_code": "DEST_SPEC_VIOLATION"
+      },
+      "actual_status": "failed",
+      "actual_error_code": "DEST_SPEC_VIOLATION",
+      "expectation_matched": true,
+      "duration_ms": 17,
+      "live_url": null,
+      "platform_post_id": null,
+      "response_data": {
+        "error": {
+          "code": "DEST_SPEC_VIOLATION",
+          "message": "Title exceeds maximum allowed length of 200 chars (got 212); Lemmy post name must not exceed 200 characters",
+          "retryable": false,
+          "details": {
+            "code": "DEST_SPEC_VIOLATION",
+            "violations": [
+              {
+                "rule": "DEST_SPEC_VIOLATION",
+                "field": "title",
+                "message": "Title exceeds maximum allowed length of 200 chars (got 212)"
+              },
+              {
+                "rule": "DEST_SPEC_VIOLATION",
+                "field": "title",
+                "message": "Lemmy post name must not exceed 200 characters"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "index": 6,
+      "id": "case_06_unaccepted_media_rejected",
+      "case_description": "Hard case: Submitting video media to a text-and-image only community",
+      "expected_outcome": {
+        "status": "failed",
+        "error_code": "DEST_SPEC_VIOLATION"
+      },
+      "actual_status": "failed",
+      "actual_error_code": "DEST_RULE_FREQUENCY_CAP",
+      "expectation_matched": false,
+      "duration_ms": 8,
+      "live_url": null,
+      "platform_post_id": null,
+      "response_data": {
+        "error": {
+          "code": "DEST_RULE_FREQUENCY_CAP",
+          "message": "Frequency cap exceeded: Destination allows at most 1 post(s) per 168 hours. Currently 1 recent post(s). Window resets at 2026-11-07T13:11:29.819Z.",
+          "retryable": false,
+          "details": {
+            "code": "DEST_RULE_FREQUENCY_CAP",
+            "retry_at": "2026-11-07T13:11:29.819Z",
+            "reschedule_after": "2026-11-07T13:11:29.819Z",
+            "violations": [
+              {
+                "rule": "DEST_RULE_FREQUENCY_CAP",
+                "field": "frequency_cap",
+                "retry_at": "2026-11-07T13:11:29.819Z",
+                "message": "Frequency cap exceeded: Destination allows at most 1 post(s) per 168 hours. Currently 1 recent post(s). Window resets at 2026-11-07T13:11:29.819Z."
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "index": 7,
+      "id": "case_07_valid_devto_canonical",
+      "case_description": "Valid developer tutorial publication with canonical URL to Dev.to",
+      "expected_outcome": {
+        "status": "succeeded"
+      },
+      "actual_status": "succeeded",
+      "actual_error_code": null,
+      "expectation_matched": true,
+      "duration_ms": 435,
+      "live_url": "http://127.0.0.1:55008/mock/devto/articles/devto_61816",
+      "platform_post_id": "devto_61816",
+      "response_data": {
+        "job_id": "job_4e13458f-31fa-4e5d-9d40-3620de42cb3b",
+        "destination_id": "dest_cert_devto",
+        "destination_name": "Certified Dev.to Technical Network",
+        "connector_key": "devto",
+        "idempotency_key": "batch_run_1793452290347_007",
+        "status": "succeeded",
+        "progress": 100,
+        "run_at": null,
+        "title": "Building Safe Retries across Network Timeouts with Markers",
+        "platform_post_id": "devto_61816",
+        "live_url": "http://127.0.0.1:55008/mock/devto/articles/devto_61816",
+        "rule_decision": null,
+        "rule_violations": [],
+        "manifest": {
+          "version": "1.0.0",
+          "generator": "IncuBrix Long-Tail Distribution Network Engine",
+          "timestamp": "2026-10-31T13:11:30.364Z",
+          "connector": {
+            "key": "devto",
+            "execution_time_ms": 9
+          },
+          "models_and_providers": {
+            "provider": "mock",
+            "model": "deterministic-heuristic",
+            "version": "1.0.0",
+            "is_commercial_licensed": true
+          },
+          "content_classification": {
+            "is_ai_generated": false,
+            "marked_as_ai": false,
+            "disclosure_added": false,
+            "disclosure_text": null,
+            "generation_method": "human_authored"
+          },
+          "seed": {
+            "value": null,
+            "reason": "Deterministic heuristic execution, non-stochastic model"
+          },
+          "settings": {
+            "environment": "development",
+            "simulation": true,
+            "destination_id": "dest_cert_devto",
+            "platform_key": "devto"
+          },
+          "timings": {
+            "started_at": "2026-10-31T13:11:30.355Z",
+            "completed_at": "2026-10-31T13:11:30.364Z",
+            "duration_ms": 9
+          },
+          "cost_estimate": {
+            "unit": "per_publication",
+            "cost_usd": 0,
+            "cost_per_1000_usd": 0,
+            "currency": "USD"
+          },
+          "warnings": [],
+          "licensing": {
+            "declared_licenses": [
+              "---------",
+              "----------------------",
+              "MIT",
+              "Node.js (MIT-style)",
+              "Apache-2.0",
+              "ISC",
+              "BSD-2-Clause",
+              "Tool",
+              "------"
+            ],
+            "commercial_use_allowed": true,
+            "agpl_free": true,
+            "source_reference": "SOURCES.md"
+          }
+        },
+        "output_manifest": {
+          "version": "1.0.0",
+          "generator": "IncuBrix Long-Tail Distribution Network Engine",
+          "timestamp": "2026-10-31T13:11:30.364Z",
+          "connector": {
+            "key": "devto",
+            "execution_time_ms": 9
+          },
+          "models_and_providers": {
+            "provider": "mock",
+            "model": "deterministic-heuristic",
+            "version": "1.0.0",
+            "is_commercial_licensed": true
+          },
+          "content_classification": {
+            "is_ai_generated": false,
+            "marked_as_ai": false,
+            "disclosure_added": false,
+            "disclosure_text": null,
+            "generation_method": "human_authored"
+          },
+          "seed": {
+            "value": null,
+            "reason": "Deterministic heuristic execution, non-stochastic model"
+          },
+          "settings": {
+            "environment": "development",
+            "simulation": true,
+            "destination_id": "dest_cert_devto",
+            "platform_key": "devto"
+          },
+          "timings": {
+            "started_at": "2026-10-31T13:11:30.355Z",
+            "completed_at": "2026-10-31T13:11:30.364Z",
+            "duration_ms": 9
+          },
+          "cost_estimate": {
+            "unit": "per_publication",
+            "cost_usd": 0,
+            "cost_per_1000_usd": 0,
+            "currency": "USD"
+          },
+          "warnings": [],
+          "licensing": {
+            "declared_licenses": [
+              "---------",
+              "----------------------",
+              "MIT",
+              "Node.js (MIT-style)",
+              "Apache-2.0",
+              "ISC",
+              "BSD-2-Clause",
+              "Tool",
+              "------"
+            ],
+            "commercial_use_allowed": true,
+            "agpl_free": true,
+            "source_reference": "SOURCES.md"
+          }
+        },
+        "tailoring_warnings": [],
+        "error": null,
+        "created_at": "2026-10-31T13:11:30.354Z",
+        "updated_at": "2026-10-31T13:11:30.364Z"
+      }
+    },
+    {
+      "index": 8,
+      "id": "case_08_valid_webhook_partner",
+      "case_description": "Valid high-throughput webhook dispatch with HMAC signing",
+      "expected_outcome": {
+        "status": "succeeded"
+      },
+      "actual_status": "succeeded",
+      "actual_error_code": null,
+      "expectation_matched": true,
+      "duration_ms": 414,
+      "live_url": "http://127.0.0.1:55008/mock/webhook/events/wh_19234",
+      "platform_post_id": "wh_19234",
+      "response_data": {
+        "job_id": "job_e25aa4d8-d047-487b-a75e-23a78b63df8d",
+        "destination_id": "dest_cert_webhook",
+        "destination_name": "Certified Webhook Syndicate Receiver",
+        "connector_key": "webhook",
+        "idempotency_key": "batch_run_1793452290784_008",
+        "status": "succeeded",
+        "progress": 100,
+        "run_at": null,
+        "title": "Automated Content Syndication Event",
+        "platform_post_id": "wh_19234",
+        "live_url": "http://127.0.0.1:55008/mock/webhook/events/wh_19234",
+        "rule_decision": null,
+        "rule_violations": [],
+        "manifest": {
+          "version": "1.0.0",
+          "generator": "IncuBrix Long-Tail Distribution Network Engine",
+          "timestamp": "2026-10-31T13:11:30.798Z",
+          "connector": {
+            "key": "webhook",
+            "execution_time_ms": 6
+          },
+          "models_and_providers": {
+            "provider": "mock",
+            "model": "deterministic-heuristic",
+            "version": "1.0.0",
+            "is_commercial_licensed": true
+          },
+          "content_classification": {
+            "is_ai_generated": false,
+            "marked_as_ai": false,
+            "disclosure_added": false,
+            "disclosure_text": null,
+            "generation_method": "human_authored"
+          },
+          "seed": {
+            "value": null,
+            "reason": "Deterministic heuristic execution, non-stochastic model"
+          },
+          "settings": {
+            "environment": "development",
+            "simulation": true,
+            "destination_id": "dest_cert_webhook",
+            "platform_key": "webhook"
+          },
+          "timings": {
+            "started_at": "2026-10-31T13:11:30.791Z",
+            "completed_at": "2026-10-31T13:11:30.797Z",
+            "duration_ms": 6
+          },
+          "cost_estimate": {
+            "unit": "per_publication",
+            "cost_usd": 0,
+            "cost_per_1000_usd": 0,
+            "currency": "USD"
+          },
+          "warnings": [],
+          "licensing": {
+            "declared_licenses": [
+              "---------",
+              "----------------------",
+              "MIT",
+              "Node.js (MIT-style)",
+              "Apache-2.0",
+              "ISC",
+              "BSD-2-Clause",
+              "Tool",
+              "------"
+            ],
+            "commercial_use_allowed": true,
+            "agpl_free": true,
+            "source_reference": "SOURCES.md"
+          }
+        },
+        "output_manifest": {
+          "version": "1.0.0",
+          "generator": "IncuBrix Long-Tail Distribution Network Engine",
+          "timestamp": "2026-10-31T13:11:30.798Z",
+          "connector": {
+            "key": "webhook",
+            "execution_time_ms": 6
+          },
+          "models_and_providers": {
+            "provider": "mock",
+            "model": "deterministic-heuristic",
+            "version": "1.0.0",
+            "is_commercial_licensed": true
+          },
+          "content_classification": {
+            "is_ai_generated": false,
+            "marked_as_ai": false,
+            "disclosure_added": false,
+            "disclosure_text": null,
+            "generation_method": "human_authored"
+          },
+          "seed": {
+            "value": null,
+            "reason": "Deterministic heuristic execution, non-stochastic model"
+          },
+          "settings": {
+            "environment": "development",
+            "simulation": true,
+            "destination_id": "dest_cert_webhook",
+            "platform_key": "webhook"
+          },
+          "timings": {
+            "started_at": "2026-10-31T13:11:30.791Z",
+            "completed_at": "2026-10-31T13:11:30.797Z",
+            "duration_ms": 6
+          },
+          "cost_estimate": {
+            "unit": "per_publication",
+            "cost_usd": 0,
+            "cost_per_1000_usd": 0,
+            "currency": "USD"
+          },
+          "warnings": [],
+          "licensing": {
+            "declared_licenses": [
+              "---------",
+              "----------------------",
+              "MIT",
+              "Node.js (MIT-style)",
+              "Apache-2.0",
+              "ISC",
+              "BSD-2-Clause",
+              "Tool",
+              "------"
+            ],
+            "commercial_use_allowed": true,
+            "agpl_free": true,
+            "source_reference": "SOURCES.md"
+          }
+        },
+        "tailoring_warnings": [],
+        "error": null,
+        "created_at": "2026-10-31T13:11:30.789Z",
+        "updated_at": "2026-10-31T13:11:30.798Z"
+      }
+    }
+  ]
+}

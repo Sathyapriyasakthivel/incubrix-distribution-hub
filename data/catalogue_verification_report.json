@@ -1,0 +1,309 @@
+{
+  "audited_at": "2026-10-31T14:06:58.894Z",
+  "total_candidates": 219,
+  "verified_reachable_count": 150,
+  "excluded_unreachable_count": 50,
+  "target_met": true,
+  "excluded": [
+    {
+      "name": "Strapi Headless CMS Community",
+      "url": "https://forum.strapi.io",
+      "reason": "HTTP_404",
+      "status": 404
+    },
+    {
+      "name": "Home Assistant Community",
+      "url": "https://community.home-assistant.io",
+      "reason": "HTTP_403",
+      "status": 403
+    },
+    {
+      "name": "Cloudflare Community Forum",
+      "url": "https://community.cloudflare.com",
+      "reason": "HTTP_403",
+      "status": 403
+    },
+    {
+      "name": "Lemmy World - Artificial Intelligence",
+      "url": "https://lemmy.world/c/artificialintelligence",
+      "reason": "HTTP_403",
+      "status": 403
+    },
+    {
+      "name": "Lemmy World - Technology Hub",
+      "url": "https://lemmy.world/c/technology",
+      "reason": "HTTP_403",
+      "status": 403
+    },
+    {
+      "name": "Lemmy World - Open Source",
+      "url": "https://lemmy.world/c/opensource",
+      "reason": "HTTP_403",
+      "status": 403
+    },
+    {
+      "name": "Lemmy World - Programming",
+      "url": "https://lemmy.world/c/programming",
+      "reason": "HTTP_403",
+      "status": 403
+    },
+    {
+      "name": "Lemmy World - Linux Desktop & Server",
+      "url": "https://lemmy.world/c/linux",
+      "reason": "HTTP_403",
+      "status": 403
+    },
+    {
+      "name": "Lemmy World - WebDev Community",
+      "url": "https://lemmy.world/c/webdev",
+      "reason": "HTTP_403",
+      "status": 403
+    },
+    {
+      "name": "Lemmy World - Self-Hosted Architecture",
+      "url": "https://lemmy.world/c/selfhosted",
+      "reason": "HTTP_403",
+      "status": 403
+    },
+    {
+      "name": "Lemmy World - Privacy & Digital Freedom",
+      "url": "https://lemmy.world/c/privacy",
+      "reason": "HTTP_403",
+      "status": 403
+    },
+    {
+      "name": "Lemmy World - Startups & Bootstrapping",
+      "url": "https://lemmy.world/c/startups",
+      "reason": "HTTP_403",
+      "status": 403
+    },
+    {
+      "name": "Lemmy World - Entrepreneurship",
+      "url": "https://lemmy.world/c/entrepreneur",
+      "reason": "HTTP_403",
+      "status": 403
+    },
+    {
+      "name": "Programming.dev - Web Development",
+      "url": "https://programming.dev/c/webdev",
+      "reason": "HTTP_403",
+      "status": 403
+    },
+    {
+      "name": "Programming.dev - DevOps & Reliability",
+      "url": "https://programming.dev/c/devops",
+      "reason": "HTTP_403",
+      "status": 403
+    },
+    {
+      "name": "Programming.dev - Database Engineering",
+      "url": "https://programming.dev/c/database",
+      "reason": "HTTP_403",
+      "status": 403
+    },
+    {
+      "name": "Make Automation Community",
+      "url": "https://community.make.com",
+      "reason": "TIMEOUT",
+      "status": null
+    },
+    {
+      "name": "Programming.dev - General Programming",
+      "url": "https://programming.dev/c/programming",
+      "reason": "HTTP_403",
+      "status": 403
+    },
+    {
+      "name": "Sh.itjust.works - Technology Discussion",
+      "url": "https://sh.itjust.works/c/technology",
+      "reason": "HTTP_403",
+      "status": 403
+    },
+    {
+      "name": "Tech Video Weekly Podcast Feed",
+      "url": "https://feeds.incubrix.internal/tech-video-weekly.xml",
+      "reason": "fetch failed",
+      "status": null
+    },
+    {
+      "name": "AI Creators Video Showcase",
+      "url": "https://feeds.incubrix.internal/ai-creators.xml",
+      "reason": "fetch failed",
+      "status": null
+    },
+    {
+      "name": "SaaS Product Demos MRSS Channel",
+      "url": "https://feeds.incubrix.internal/saas-demos.xml",
+      "reason": "fetch failed",
+      "status": null
+    },
+    {
+      "name": "Sh.itjust.works - Self-Hosting Hub",
+      "url": "https://sh.itjust.works/c/selfhosted",
+      "reason": "HTTP_403",
+      "status": 403
+    },
+    {
+      "name": "Synthesized AI Weekly Digest",
+      "url": "https://synthesized.ghost.io",
+      "reason": "HTTP_404",
+      "status": 404
+    },
+    {
+      "name": "Growth Engineer Publication",
+      "url": "https://growthengineer.ghost.io",
+      "reason": "HTTP_404",
+      "status": 404
+    },
+    {
+      "name": "Creator Studio Insights",
+      "url": "https://creatorstudio.ghost.io",
+      "reason": "HTTP_404",
+      "status": 404
+    },
+    {
+      "name": "Pipedream Developer Feed Hook",
+      "url": "https://eokr982394.pipedream.net/ingest",
+      "reason": "fetch failed",
+      "status": null
+    },
+    {
+      "name": "Programming.dev - Machine Learning Hub",
+      "url": "https://programming.dev/c/machinelearning",
+      "reason": "HTTP_403",
+      "status": 403
+    },
+    {
+      "name": "GenAI Creators Collective Slack",
+      "url": "https://genai-creators.slack.com",
+      "reason": "HTTP_404",
+      "status": 404
+    },
+    {
+      "name": "Make.com Partner Receiver",
+      "url": "https://hook.eu1.make.com/incubrix-publish",
+      "reason": "HTTP_404",
+      "status": 404
+    },
+    {
+      "name": "Feddit.de - Open Source Software",
+      "url": "https://feddit.de/c/opensource",
+      "reason": "HTTP_404",
+      "status": 404
+    },
+    {
+      "name": "Feddit.de - Technologie Community",
+      "url": "https://feddit.de/c/technologie",
+      "reason": "HTTP_404",
+      "status": 404
+    },
+    {
+      "name": "Feddit.de - Linux Forum",
+      "url": "https://feddit.de/c/linux",
+      "reason": "HTTP_404",
+      "status": 404
+    },
+    {
+      "name": "MLOps Community Slack",
+      "url": "https://mlops-community.slack.com",
+      "reason": "HTTP_403",
+      "status": 403
+    },
+    {
+      "name": "Hardwareluxx German Tech Community",
+      "url": "https://www.hardwareluxx.de/community",
+      "reason": "HTTP_403",
+      "status": 403
+    },
+    {
+      "name": "Hardware Upgrade Italian Forum",
+      "url": "https://www.hwupgrade.it/forum",
+      "reason": "HTTP_403",
+      "status": 403
+    },
+    {
+      "name": "Airflow Community Forum",
+      "url": "https://discourse.apache.org",
+      "reason": "fetch failed",
+      "status": null
+    },
+    {
+      "name": "Astro Web Framework Community",
+      "url": "https://github.com/withastro/astro/discussions",
+      "reason": "HTTP_404",
+      "status": 404
+    },
+    {
+      "name": "Ollama Local Models Community",
+      "url": "https://github.com/ollama/ollama/discussions",
+      "reason": "HTTP_404",
+      "status": 404
+    },
+    {
+      "name": "CodeNewbie Community",
+      "url": "https://community.codenewbie.org",
+      "reason": "TIMEOUT",
+      "status": null
+    },
+    {
+      "name": "AutoGPT Autonomous Systems Hub",
+      "url": "https://github.com/Significant-Gravitas/AutoGPT/discussions",
+      "reason": "HTTP_404",
+      "status": 404
+    },
+    {
+      "name": "Medium Engineering Publications",
+      "url": "https://medium.com",
+      "reason": "HTTP_403",
+      "status": 403
+    },
+    {
+      "name": "Stack Overflow Discussions",
+      "url": "https://stackoverflow.com",
+      "reason": "HTTP_403",
+      "status": 403
+    },
+    {
+      "name": "GitHub Transformers Discussions",
+      "url": "https://github.com/huggingface/transformers/discussions",
+      "reason": "HTTP_404",
+      "status": 404
+    },
+    {
+      "name": "GitHub PostHog Discussions",
+      "url": "https://github.com/PostHog/posthog/discussions",
+      "reason": "HTTP_404",
+      "status": 404
+    },
+    {
+      "name": "GitHub Cal.com Discussions",
+      "url": "https://github.com/calcom/cal.com/discussions",
+      "reason": "HTTP_404",
+      "status": 404
+    },
+    {
+      "name": "Product Hunt Discussions",
+      "url": "https://www.producthunt.com/discussions",
+      "reason": "HTTP_403",
+      "status": 403
+    },
+    {
+      "name": "TensorFlow Official Community",
+      "url": "https://discuss.tensorflow.org",
+      "reason": "TIMEOUT",
+      "status": null
+    },
+    {
+      "name": "Audacity Audio Engineering Community",
+      "url": "https://forum.audacityteam.org",
+      "reason": "HTTP_403",
+      "status": 403
+    },
+    {
+      "name": "Arduino Hardware & IoT Community",
+      "url": "https://forum.arduino.cc",
+      "reason": "TIMEOUT",
+      "status": null
+    }
+  ]
+}

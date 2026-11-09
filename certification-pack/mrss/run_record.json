@@ -1,0 +1,78 @@
+{
+  "mode": "SIMULATION_MOCK",
+  "run_id": "cert_1dc9133f-6122-45ff-87e1-46af7b2d5593",
+  "destination_id": "dest_cert_mrss",
+  "destination_name": "Certified MRSS Video Feed",
+  "platform_key": "mrss",
+  "connector_key": "mrss",
+  "status": "failed",
+  "level": "L0",
+  "is_simulation": true,
+  "duration_ms": 8,
+  "test_post_id": "mrss_60e76284-875a-412f-9fc3-0b363c240b3a",
+  "test_live_url": "http://127.0.0.1:55008/feeds/evidence-pack.xml/feeds/dest_cert_mrss.xml#mrss_60e76284-875a-412f-9fc3-0b363c240b3a",
+  "is_cleaned_up": true,
+  "steps": [
+    {
+      "step": 1,
+      "name": "Validate Destination Configuration",
+      "status": "passed",
+      "timestamp": "2026-10-31T13:11:24.546Z",
+      "details": {
+        "destination_id": "dest_cert_mrss",
+        "platform_key": "mrss",
+        "url": "http://127.0.0.1:55008/feeds/evidence-pack.xml",
+        "surface": "default"
+      }
+    },
+    {
+      "step": 2,
+      "name": "Check Connector Readiness",
+      "status": "passed",
+      "timestamp": "2026-10-31T13:11:24.546Z",
+      "details": {
+        "connector_key": "mrss",
+        "version": "1.0.0",
+        "tier": "feed"
+      }
+    },
+    {
+      "step": 3,
+      "name": "Verify Authentication Configuration",
+      "status": "passed",
+      "timestamp": "2026-10-31T13:11:24.546Z",
+      "details": {
+        "auth_type": "***REDACTED***",
+        "authenticated": "***REDACTED***"
+      }
+    },
+    {
+      "step": 4,
+      "name": "Publish Test Item",
+      "status": "passed",
+      "timestamp": "2026-10-31T13:11:24.548Z",
+      "details": {
+        "test_post_id": "mrss_60e76284-875a-412f-9fc3-0b363c240b3a",
+        "live_url": "http://127.0.0.1:55008/feeds/evidence-pack.xml/feeds/dest_cert_mrss.xml#mrss_60e76284-875a-412f-9fc3-0b363c240b3a",
+        "status": "published"
+      }
+    },
+    {
+      "step": 5,
+      "name": "Certification Error",
+      "status": "failed",
+      "timestamp": "2026-10-31T13:11:24.552Z",
+      "details": {
+        "error_code": "CERTIFICATION_FAILED",
+        "error_message": "Live URL returned non-200 status: HTTP 404",
+        "is_transient": false
+      }
+    }
+  ],
+  "evidence_url": "http://localhost:4000/api/v1/storage/files/certification/cert_1dc9133f-6122-45ff-87e1-46af7b2d5593.json",
+  "evidence_md_url": "http://localhost:4000/api/v1/storage/files/certification/cert_1dc9133f-6122-45ff-87e1-46af7b2d5593.md",
+  "error": {
+    "code": "CERTIFICATION_FAILED",
+    "message": "Live URL returned non-200 status: HTTP 404"
+  }
+}

@@ -1,0 +1,269 @@
+{
+  "evaluated_at": "2026-10-31T13:11:31.216Z",
+  "dataset_notice": "DRAFT - NEEDS HUMAN REVIEW. This ground-truth labelled evaluation set is an initial draft generated for offline recommender evaluation. Ground rules dictate that these AI-drafted relevance labels must be formally audited and reviewed by a domain specialist before production benchmarking.",
+  "total_items_evaluated": 20,
+  "average_precision_at_10": 0,
+  "average_hits_in_top_10": 0,
+  "results": [
+    {
+      "item_id": "content_01",
+      "title": "Scaling Distributed Node.js Background Jobs with SQLite WAL Mode",
+      "relevant_count": 3,
+      "hits_in_top_10": 0,
+      "precision_at_10": 0,
+      "coverage_rate": 0,
+      "top_recommendations": [
+        "Certified Discourse Forum",
+        "Certified Dev.to Technical Network",
+        "Certified Webhook Syndicate Receiver"
+      ]
+    },
+    {
+      "item_id": "content_02",
+      "title": "Fine-Tuning Open Source LLMs on Custom Technical Datasets",
+      "relevant_count": 3,
+      "hits_in_top_10": 0,
+      "precision_at_10": 0,
+      "coverage_rate": 0,
+      "top_recommendations": [
+        "Certified Discourse Forum",
+        "Certified Dev.to Technical Network",
+        "Certified Webhook Syndicate Receiver"
+      ]
+    },
+    {
+      "item_id": "content_03",
+      "title": "From Zero to $10k MRR: Bootstrapping a Micro-SaaS Without Venture Capital",
+      "relevant_count": 3,
+      "hits_in_top_10": 0,
+      "precision_at_10": 0,
+      "coverage_rate": 0,
+      "top_recommendations": [
+        "Certified Discourse Forum",
+        "Certified Dev.to Technical Network",
+        "Certified Webhook Syndicate Receiver"
+      ]
+    },
+    {
+      "item_id": "content_04",
+      "title": "Automated Video Syndication: Packaging Long-Form Content into Vertical Shorts",
+      "relevant_count": 4,
+      "hits_in_top_10": 0,
+      "precision_at_10": 0,
+      "coverage_rate": 0,
+      "top_recommendations": [
+        "Certified Discourse Forum",
+        "Certified Dev.to Technical Network",
+        "Certified Webhook Syndicate Receiver"
+      ]
+    },
+    {
+      "item_id": "content_05",
+      "title": "SEO Tactics for Programmatic Content Distribution in 2026",
+      "relevant_count": 3,
+      "hits_in_top_10": 0,
+      "precision_at_10": 0,
+      "coverage_rate": 0,
+      "top_recommendations": [
+        "Certified Discourse Forum",
+        "Certified Dev.to Technical Network",
+        "Certified Webhook Syndicate Receiver"
+      ]
+    },
+    {
+      "item_id": "content_06",
+      "title": "Building Production Prompt Chains with LangChain and LlamaIndex",
+      "relevant_count": 3,
+      "hits_in_top_10": 0,
+      "precision_at_10": 0,
+      "coverage_rate": 0,
+      "top_recommendations": [
+        "Certified Discourse Forum",
+        "Certified Dev.to Technical Network",
+        "Certified Webhook Syndicate Receiver"
+      ]
+    },
+    {
+      "item_id": "content_07",
+      "title": "Why We Migrated from Postgres to Embedded SQLite for Edge Gateways",
+      "relevant_count": 2,
+      "hits_in_top_10": 0,
+      "precision_at_10": 0,
+      "coverage_rate": 0,
+      "top_recommendations": [
+        "Certified Discourse Forum",
+        "Certified Dev.to Technical Network",
+        "Certified Webhook Syndicate Receiver"
+      ]
+    },
+    {
+      "item_id": "content_08",
+      "title": "B2B SaaS Churn Prevention: Analyzing Exit Surveys and Downgrade Triggers",
+      "relevant_count": 2,
+      "hits_in_top_10": 0,
+      "precision_at_10": 0,
+      "coverage_rate": 0,
+      "top_recommendations": [
+        "Certified Discourse Forum",
+        "Certified Dev.to Technical Network",
+        "Certified Webhook Syndicate Receiver"
+      ]
+    },
+    {
+      "item_id": "content_09",
+      "title": "ComfyUI Node Graph Masterclass for Photorealistic Video Generation",
+      "relevant_count": 3,
+      "hits_in_top_10": 0,
+      "precision_at_10": 0,
+      "coverage_rate": 0,
+      "top_recommendations": [
+        "Certified Discourse Forum",
+        "Certified Dev.to Technical Network",
+        "Certified Webhook Syndicate Receiver"
+      ]
+    },
+    {
+      "item_id": "content_10",
+      "title": "Engineering High-Precision Idempotency Keys in Distributed REST APIs",
+      "relevant_count": 2,
+      "hits_in_top_10": 0,
+      "precision_at_10": 0,
+      "coverage_rate": 0,
+      "top_recommendations": [
+        "Certified Discourse Forum",
+        "Certified Dev.to Technical Network",
+        "Certified Webhook Syndicate Receiver"
+      ]
+    },
+    {
+      "item_id": "content_11",
+      "title": "Diffusion Models vs Autoregressive Transformers for Multimodal Synthesis",
+      "relevant_count": 2,
+      "hits_in_top_10": 0,
+      "precision_at_10": 0,
+      "coverage_rate": 0,
+      "top_recommendations": [
+        "Certified Discourse Forum",
+        "Certified Dev.to Technical Network",
+        "Certified Webhook Syndicate Receiver"
+      ]
+    },
+    {
+      "item_id": "content_12",
+      "title": "Optimizing B2B Self-Service Funnels: Landing Page Conversion Teardown",
+      "relevant_count": 3,
+      "hits_in_top_10": 0,
+      "precision_at_10": 0,
+      "coverage_rate": 0,
+      "top_recommendations": [
+        "Certified Discourse Forum",
+        "Certified Dev.to Technical Network",
+        "Certified Webhook Syndicate Receiver"
+      ]
+    },
+    {
+      "item_id": "content_13",
+      "title": "Creating Custom Audio Spectra and Subtitle Overlays with FFmpeg",
+      "relevant_count": 3,
+      "hits_in_top_10": 0,
+      "precision_at_10": 0,
+      "coverage_rate": 0,
+      "top_recommendations": [
+        "Certified Discourse Forum",
+        "Certified Dev.to Technical Network",
+        "Certified Webhook Syndicate Receiver"
+      ]
+    },
+    {
+      "item_id": "content_14",
+      "title": "Deploying Local LLMs on Apple Silicon with MLX and Ollama",
+      "relevant_count": 3,
+      "hits_in_top_10": 0,
+      "precision_at_10": 0,
+      "coverage_rate": 0,
+      "top_recommendations": [
+        "Certified Discourse Forum",
+        "Certified Dev.to Technical Network",
+        "Certified Webhook Syndicate Receiver"
+      ]
+    },
+    {
+      "item_id": "content_15",
+      "title": "Navigating the SaaS Pricing Matrix: Per-Seat vs Usage-Based Pricing",
+      "relevant_count": 2,
+      "hits_in_top_10": 0,
+      "precision_at_10": 0,
+      "coverage_rate": 0,
+      "top_recommendations": [
+        "Certified Discourse Forum",
+        "Certified Dev.to Technical Network",
+        "Certified Webhook Syndicate Receiver"
+      ]
+    },
+    {
+      "item_id": "content_16",
+      "title": "Multi-Camera Streaming Over WebRTC with Ultra-Low Latency",
+      "relevant_count": 2,
+      "hits_in_top_10": 0,
+      "precision_at_10": 0,
+      "coverage_rate": 0,
+      "top_recommendations": [
+        "Certified Discourse Forum",
+        "Certified Dev.to Technical Network",
+        "Certified Webhook Syndicate Receiver"
+      ]
+    },
+    {
+      "item_id": "content_17",
+      "title": "AI Ethics and Disclosure: Complying with Emerging Content Transparency Standards",
+      "relevant_count": 2,
+      "hits_in_top_10": 0,
+      "precision_at_10": 0,
+      "coverage_rate": 0,
+      "top_recommendations": [
+        "Certified Discourse Forum",
+        "Certified Dev.to Technical Network",
+        "Certified Webhook Syndicate Receiver"
+      ]
+    },
+    {
+      "item_id": "content_18",
+      "title": "Cold Email Outreach for Developer Tools: What Actually Gets Responses",
+      "relevant_count": 2,
+      "hits_in_top_10": 0,
+      "precision_at_10": 0,
+      "coverage_rate": 0,
+      "top_recommendations": [
+        "Certified Discourse Forum",
+        "Certified Dev.to Technical Network",
+        "Certified Webhook Syndicate Receiver"
+      ]
+    },
+    {
+      "item_id": "content_19",
+      "title": "Implementing Circuit Breakers and Adaptive Backoff for Unreliable Upstream APIs",
+      "relevant_count": 2,
+      "hits_in_top_10": 0,
+      "precision_at_10": 0,
+      "coverage_rate": 0,
+      "top_recommendations": [
+        "Certified Discourse Forum",
+        "Certified Dev.to Technical Network",
+        "Certified Webhook Syndicate Receiver"
+      ]
+    },
+    {
+      "item_id": "content_20",
+      "title": "Monetizing Video Podcasting: Direct Sponsorships vs Programmatic Ad Ingestion",
+      "relevant_count": 3,
+      "hits_in_top_10": 0,
+      "precision_at_10": 0,
+      "coverage_rate": 0,
+      "top_recommendations": [
+        "Certified Discourse Forum",
+        "Certified Dev.to Technical Network",
+        "Certified Webhook Syndicate Receiver"
+      ]
+    }
+  ]
+}

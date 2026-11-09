@@ -1,0 +1,124 @@
+{
+  "mode": "SIMULATION_MOCK",
+  "run_id": "cert_ef736efc-f14a-47c8-bccd-c45d298d9949",
+  "destination_id": "dest_cert_assisted",
+  "destination_name": "Certified Assisted Publishing Pack Generator",
+  "platform_key": "assisted",
+  "connector_key": "assisted",
+  "status": "certified",
+  "level": "L1",
+  "is_simulation": true,
+  "duration_ms": 815,
+  "test_post_id": "pack_e740b59ed53a",
+  "test_live_url": "https://community.openai.com",
+  "is_cleaned_up": true,
+  "steps": [
+    {
+      "step": 1,
+      "name": "Validate Destination Configuration",
+      "status": "passed",
+      "timestamp": "2026-10-31T13:11:28.937Z",
+      "details": {
+        "destination_id": "dest_cert_assisted",
+        "platform_key": "assisted",
+        "url": "https://community.openai.com",
+        "surface": "default"
+      }
+    },
+    {
+      "step": 2,
+      "name": "Check Connector Readiness",
+      "status": "passed",
+      "timestamp": "2026-10-31T13:11:28.937Z",
+      "details": {
+        "connector_key": "assisted",
+        "version": "1.0.0",
+        "tier": "assisted"
+      }
+    },
+    {
+      "step": 3,
+      "name": "Verify Authentication Configuration",
+      "status": "passed",
+      "timestamp": "2026-10-31T13:11:28.937Z",
+      "details": {
+        "auth_type": "***REDACTED***",
+        "authenticated": "***REDACTED***"
+      }
+    },
+    {
+      "step": 4,
+      "name": "Publish Test Item",
+      "status": "passed",
+      "timestamp": "2026-10-31T13:11:28.940Z",
+      "details": {
+        "test_post_id": "pack_e740b59ed53a",
+        "live_url": "https://community.openai.com",
+        "status": "assisted_pack_ready"
+      }
+    },
+    {
+      "step": 5,
+      "name": "Confirm Live Status & Content Retrievability",
+      "status": "passed",
+      "timestamp": "2026-10-31T13:11:28.942Z",
+      "details": {
+        "pack_id": "pack_e740b59ed53a",
+        "deep_link": "https://community.openai.com",
+        "idempotent_regeneration_verified": true,
+        "confirmed_title": "[CERTIFICATION-TEST] IncuBrix Test Run 8d9949"
+      }
+    },
+    {
+      "step": 6,
+      "name": "Retrieve Publication Status",
+      "status": "passed",
+      "timestamp": "2026-10-31T13:11:28.943Z",
+      "details": {
+        "retrieved_status": "assisted_pack_ready",
+        "live_url": "http://localhost:4000/api/v1/storage/assisted/pack_e740b59ed53a.json"
+      }
+    },
+    {
+      "step": 7,
+      "name": "Delete Test Item",
+      "status": "passed",
+      "timestamp": "2026-10-31T13:11:28.944Z",
+      "details": {
+        "deleted": true
+      }
+    },
+    {
+      "step": 8,
+      "name": "Confirm Gone (Cleanup Verification)",
+      "status": "passed",
+      "timestamp": "2026-10-31T13:11:28.944Z",
+      "details": {
+        "post_status_after_delete": "not_found"
+      }
+    },
+    {
+      "step": 9,
+      "name": "Store Evidence Pack",
+      "status": "passed",
+      "timestamp": "2026-10-31T13:11:29.752Z",
+      "details": {
+        "evidence_json_url": "http://localhost:4000/api/v1/storage/files/certification/cert_ef736efc-f14a-47c8-bccd-c45d298d9949.json",
+        "evidence_md_url": "http://localhost:4000/api/v1/storage/files/certification/cert_ef736efc-f14a-47c8-bccd-c45d298d9949.md"
+      }
+    },
+    {
+      "step": 10,
+      "name": "Produce Final Certification Report",
+      "status": "passed",
+      "timestamp": "2026-10-31T13:11:29.752Z",
+      "details": {
+        "final_verdict": "CERTIFIED",
+        "assigned_level": "L1"
+      }
+    }
+  ],
+  "evidence_url": "http://localhost:4000/api/v1/storage/files/certification/cert_ef736efc-f14a-47c8-bccd-c45d298d9949.json",
+  "evidence_md_url": "http://localhost:4000/api/v1/storage/files/certification/cert_ef736efc-f14a-47c8-bccd-c45d298d9949.md",
+  "error": null
+}
